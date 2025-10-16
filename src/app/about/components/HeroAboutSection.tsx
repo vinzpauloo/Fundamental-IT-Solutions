@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Award, TrendingUp, Target } from "lucide-react";
+import { ArrowRight, Users, Award, Target } from "lucide-react";
 
 export default function HeroAboutSection() {
   return (
@@ -39,8 +39,14 @@ export default function HeroAboutSection() {
           <div className="max-w-3xl mx-auto px-2">
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-300 font-medium leading-relaxed">
               Elite engineers crafting
-              <span className="text-slate-200 font-bold"> bulletproof solutions</span>
-              <span className="block mt-2 text-base sm:text-lg text-slate-400">Since day one, we've been rewriting the rules of software development.</span>
+              <span className="text-slate-200 font-bold">
+                {" "}
+                bulletproof solutions
+              </span>
+              <span className="block mt-2 text-base sm:text-lg text-slate-400">
+                Since day one, we&apos;ve been rewriting the rules of software
+                development.
+              </span>
             </p>
           </div>
 

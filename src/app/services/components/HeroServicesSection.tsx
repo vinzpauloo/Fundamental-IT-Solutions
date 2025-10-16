@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Wrench, Rocket, Shield, Zap } from "lucide-react";
+import { ArrowRight, Rocket, Shield, Zap } from "lucide-react";
 
 export default function HeroServicesSection() {
   return (

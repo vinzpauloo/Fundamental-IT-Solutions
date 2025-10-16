@@ -9,7 +9,6 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import {
   DropdownMenu,
@@ -28,30 +27,22 @@ export default function Navigator() {
         <NavigationMenu viewport={false}>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuLink
-                asChild
-              >
+              <NavigationMenuLink asChild>
                 <Link href="/">Home</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink
-                asChild
-              >
+              <NavigationMenuLink asChild>
                 <Link href="/services">Services</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink
-                asChild
-              >
+              <NavigationMenuLink asChild>
                 <Link href="/about">About</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink
-                asChild
-              >
+              <NavigationMenuLink asChild>
                 <Link href="/contact-us">Contact Us</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -62,7 +53,11 @@ export default function Navigator() {
       <div className="md:hidden">
         <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon-sm" className="text-white hover:text-[#778DA9]">
+            <Button
+              variant="ghost"
+              size="icon-sm"
+              className="text-white hover:text-[#778DA9]"
+            >
               {isOpen ? (
                 <X className="h-6 w-6" />
               ) : (
@@ -71,7 +66,10 @@ export default function Navigator() {
               <span className="sr-only">Toggle menu</span>
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-48 bg-[#0D1B2A] border-[#415A77]">
+          <DropdownMenuContent
+            align="end"
+            className="w-48 bg-[#0D1B2A] border-[#415A77]"
+          >
             <DropdownMenuItem asChild>
               <Link
                 href="/"

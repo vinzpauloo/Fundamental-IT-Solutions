@@ -98,7 +98,7 @@ export default function ServicesSection() {
                 </h3>
 
                 <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed px-2">
-                  Let's turn your ideas into reality.
+                  Let&apos;s turn your ideas into reality.
                   <span className="block mt-2 font-semibold text-slate-200">Fast. Efficient. Brilliant.</span>
                 </p>
               </div>

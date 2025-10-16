@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import LayoutContainer from "@/components/layout/LayoutContainer";
-import { benefits, guarantees, ArrowRight, CheckCircle, Shield, Zap, Clock, Sparkles } from "@/lib/constants";
+import { benefits, guarantees, ArrowRight, CheckCircle, Shield, Zap, Sparkles } from "@/lib/constants";
 
 export default function CTASection() {
   return (
@@ -33,7 +32,7 @@ export default function CTASection() {
 
             <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-600 font-medium leading-relaxed px-4">
               Stop settling. <span className="font-bold text-slate-800">Start building something legendary.</span>
-              <span className="block mt-2 text-base sm:text-lg text-slate-500">Your competitors won't wait. Neither should you.</span>
+              <span className="block mt-2 text-base sm:text-lg text-slate-500">Your competitors won&apos;t wait. Neither should you.</span>
             </p>
           </div>
 
@@ -116,8 +115,8 @@ export default function CTASection() {
 
                 <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed px-2">
                   Every day you wait is a day your competition gets ahead.
-                  <span className="block mt-2 font-semibold text-slate-200">Let's change that. Now.</span>
-                  <span className="block mt-2 text-base sm:text-lg text-slate-400">Because extraordinary results don't wait for permission.</span>
+                  <span className="block mt-2 font-semibold text-slate-200">Let&apos;s change that. Now.</span>
+                  <span className="block mt-2 text-base sm:text-lg text-slate-400">Because extraordinary results don&apos;t wait for permission.</span>
                 </p>
               </div>
 

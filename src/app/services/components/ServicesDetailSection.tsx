@@ -1,34 +1,69 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import LayoutContainer from "@/components/layout/LayoutContainer";
-import { services, ArrowRight, CheckCircle, Sparkles, Zap, Shield, Code2, Cloud, Smartphone, Database, Brain } from "@/lib/constants";
+import {
+  services,
+  ArrowRight,
+  CheckCircle,
+  Sparkles,
+  Code2,
+} from "@/lib/constants";
 
 const processSteps = [
   {
     step: "01",
     title: "Discovery & Planning",
-    description: "We dive deep into your business needs, analyze requirements, and create a detailed project roadmap.",
-    features: ["Requirements analysis", "Technical assessment", "Project timeline", "Resource allocation"]
+    description:
+      "We dive deep into your business needs, analyze requirements, and create a detailed project roadmap.",
+    features: [
+      "Requirements analysis",
+      "Technical assessment",
+      "Project timeline",
+      "Resource allocation",
+    ],
   },
   {
     step: "02",
     title: "Design & Architecture",
-    description: "Our architects design scalable, secure, and maintainable solutions tailored to your needs.",
-    features: ["System architecture", "UI/UX design", "Security planning", "Performance optimization"]
+    description:
+      "Our architects design scalable, secure, and maintainable solutions tailored to your needs.",
+    features: [
+      "System architecture",
+      "UI/UX design",
+      "Security planning",
+      "Performance optimization",
+    ],
   },
   {
     step: "03",
     title: "Development & Testing",
-    description: "Agile development with continuous integration, rigorous testing, and quality assurance.",
-    features: ["Agile methodology", "Code reviews", "Automated testing", "Performance testing"]
+    description:
+      "Agile development with continuous integration, rigorous testing, and quality assurance.",
+    features: [
+      "Agile methodology",
+      "Code reviews",
+      "Automated testing",
+      "Performance testing",
+    ],
   },
   {
     step: "04",
     title: "Deployment & Support",
-    description: "Seamless deployment, comprehensive training, and ongoing support for your success.",
-    features: ["Production deployment", "User training", "24/7 monitoring", "Maintenance & updates"]
-  }
+    description:
+      "Seamless deployment, comprehensive training, and ongoing support for your success.",
+    features: [
+      "Production deployment",
+      "User training",
+      "24/7 monitoring",
+      "Maintenance & updates",
+    ],
+  },
 ];
 
 const technologies = [
@@ -43,7 +78,7 @@ const technologies = [
   { name: "Kubernetes", category: "DevOps" },
   { name: "TypeScript", category: "Language" },
   { name: "GraphQL", category: "API" },
-  { name: "REST APIs", category: "API" }
+  { name: "REST APIs", category: "API" },
 ];
 
 export default function ServicesDetailSection() {
@@ -62,7 +97,9 @@ export default function ServicesDetailSection() {
           <div className="text-center space-y-6 sm:space-y-8">
             <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-slate-200 border border-slate-300">
               <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600 mr-2" />
-              <span className="text-sm sm:text-base text-slate-800 font-semibold">Comprehensive Solutions</span>
+              <span className="text-sm sm:text-base text-slate-800 font-semibold">
+                Comprehensive Solutions
+              </span>
             </div>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight">
@@ -72,8 +109,13 @@ export default function ServicesDetailSection() {
 
             <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-600 font-medium leading-relaxed px-4">
               From concept to deployment and beyond,
-              <span className="font-bold text-slate-800"> we handle every aspect</span>
-              <span className="block mt-2 text-base sm:text-lg text-slate-500">of your technology needs with expertise and precision.</span>
+              <span className="font-bold text-slate-800">
+                {" "}
+                we handle every aspect
+              </span>
+              <span className="block mt-2 text-base sm:text-lg text-slate-500">
+                of your technology needs with expertise and precision.
+              </span>
             </p>
           </div>
 
@@ -106,14 +148,21 @@ export default function ServicesDetailSection() {
 
                   {/* Service features */}
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-slate-800 text-sm sm:text-base">Key Features:</h4>
+                    <h4 className="font-semibold text-slate-800 text-sm sm:text-base">
+                      Key Features:
+                    </h4>
                     <ul className="space-y-2">
                       {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-slate-600 group-hover:text-slate-700 transition-colors duration-300">
+                        <li
+                          key={featureIndex}
+                          className="flex items-center text-slate-600 group-hover:text-slate-700 transition-colors duration-300"
+                        >
                           <div className="flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-slate-600 mr-2 sm:mr-3 flex-shrink-0">
                             <CheckCircle className="w-2 h-2 sm:w-3 sm:h-3 text-white" />
                           </div>
-                          <span className="font-medium text-sm sm:text-base">{feature}</span>
+                          <span className="font-medium text-sm sm:text-base">
+                            {feature}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -121,9 +170,7 @@ export default function ServicesDetailSection() {
                 </CardHeader>
 
                 <CardContent className="relative px-6 sm:px-8 pb-6 sm:pb-8">
-                  <Button
-                    className="w-full group/btn bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 sm:py-4 text-base sm:text-lg transition-all duration-500 transform hover:scale-105 hover:shadow-lg"
-                  >
+                  <Button className="w-full group/btn bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 sm:py-4 text-base sm:text-lg transition-all duration-500 transform hover:scale-105 hover:shadow-lg">
                     <span className="flex items-center justify-center">
                       Learn More
                       <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
@@ -144,27 +191,42 @@ export default function ServicesDetailSection() {
                   Our <span className="text-slate-200">Process</span>
                 </h3>
                 <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                  A proven methodology that ensures successful project delivery every time.
+                  A proven methodology that ensures successful project delivery
+                  every time.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 {processSteps.map((step, index) => (
-                  <div key={index} className="relative p-6 sm:p-8 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-slate-600/30 transition-all duration-300">
+                  <div
+                    key={index}
+                    className="relative p-6 sm:p-8 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-slate-600/30 transition-all duration-300"
+                  >
                     <div className="flex items-start space-x-4 sm:space-x-6">
                       <div className="flex-shrink-0">
                         <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-slate-600 flex items-center justify-center">
-                          <span className="text-white font-bold text-lg sm:text-xl">{step.step}</span>
+                          <span className="text-white font-bold text-lg sm:text-xl">
+                            {step.step}
+                          </span>
                         </div>
                       </div>
                       <div className="flex-1 space-y-3 sm:space-y-4">
-                        <h4 className="text-xl sm:text-2xl font-bold text-white">{step.title}</h4>
-                        <p className="text-slate-300 text-base sm:text-lg leading-relaxed">{step.description}</p>
+                        <h4 className="text-xl sm:text-2xl font-bold text-white">
+                          {step.title}
+                        </h4>
+                        <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+                          {step.description}
+                        </p>
                         <ul className="space-y-2">
                           {step.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-center text-slate-400">
+                            <li
+                              key={featureIndex}
+                              className="flex items-center text-slate-400"
+                            >
                               <CheckCircle className="w-4 h-4 text-slate-500 mr-2 flex-shrink-0" />
-                              <span className="text-sm sm:text-base">{feature}</span>
+                              <span className="text-sm sm:text-base">
+                                {feature}
+                              </span>
                             </li>
                           ))}
                         </ul>
@@ -181,7 +243,9 @@ export default function ServicesDetailSection() {
             <div className="text-center space-y-4 sm:space-y-6">
               <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-slate-200 border border-slate-300">
                 <Code2 className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600 mr-2" />
-                <span className="text-sm sm:text-base text-slate-800 font-semibold">Technologies We Use</span>
+                <span className="text-sm sm:text-base text-slate-800 font-semibold">
+                  Technologies We Use
+                </span>
               </div>
 
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight">
@@ -220,8 +284,11 @@ export default function ServicesDetailSection() {
                   <span className="block text-slate-200">Next Project?</span>
                 </h3>
                 <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed px-2">
-                  Let's discuss your requirements and create something extraordinary together.
-                  <span className="block mt-2 font-semibold text-slate-200">Free consultation. No obligations.</span>
+                  Let&apos;s discuss your requirements and create something
+                  extraordinary together.
+                  <span className="block mt-2 font-semibold text-slate-200">
+                    Free consultation. No obligations.
+                  </span>
                 </p>
               </div>
 

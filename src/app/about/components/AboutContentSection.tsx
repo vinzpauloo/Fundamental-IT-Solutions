@@ -1,29 +1,40 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import LayoutContainer from "@/components/layout/LayoutContainer";
-import { Users, Award, TrendingUp, Target, ArrowRight, CheckCircle, Star, Zap, Shield } from "lucide-react";
+import {
+  Award,
+  TrendingUp,
+  Target,
+  ArrowRight,
+  Star,
+  Zap,
+  Shield,
+} from "lucide-react";
 
 const values = [
   {
     title: "Excellence",
-    description: "We don't just build software. We craft digital masterpieces that stand the test of time.",
-    icon: Award
+    description:
+      "We don't just build software. We craft digital masterpieces that stand the test of time.",
+    icon: Award,
   },
   {
     title: "Innovation",
-    description: "Constantly pushing boundaries, exploring new technologies, and redefining what's possible.",
-    icon: Zap
+    description:
+      "Constantly pushing boundaries, exploring new technologies, and redefining what's possible.",
+    icon: Zap,
   },
   {
     title: "Integrity",
-    description: "Transparent communication, honest pricing, and delivering exactly what we promise.",
-    icon: Shield
+    description:
+      "Transparent communication, honest pricing, and delivering exactly what we promise.",
+    icon: Shield,
   },
   {
     title: "Results",
-    description: "Every project is measured by impact. We focus on outcomes that drive real business growth.",
-    icon: TrendingUp
-  }
+    description:
+      "Every project is measured by impact. We focus on outcomes that drive real business growth.",
+    icon: TrendingUp,
+  },
 ];
 
 const achievements = [
@@ -32,7 +43,7 @@ const achievements = [
   "Award-Winning Solutions",
   "24/7 Expert Support",
   "5+ Years of Excellence",
-  "Global Client Base"
+  "Global Client Base",
 ];
 
 export default function AboutContentSection() {
@@ -57,25 +68,31 @@ export default function AboutContentSection() {
                   Our <span className="text-slate-200">Story</span>
                 </h2>
                 <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                  Founded by elite engineers who were tired of the industry's broken promises,
-                  we set out to build something different.
+                  Founded by elite engineers who were tired of the industry&apos;s
+                  broken promises, we set out to build something different.
                 </p>
               </div>
 
               <div className="space-y-6 sm:space-y-8 text-slate-200">
                 <p className="text-lg sm:text-xl leading-relaxed">
-                  <span className="font-bold text-white">The Problem:</span> Too many agencies promise the world but deliver mediocrity.
-                  Endless meetings, missed deadlines, and solutions that break as soon as they're deployed.
+                  <span className="font-bold text-white">The Problem:</span> Too
+                  many agencies promise the world but deliver mediocrity.
+                  Endless meetings, missed deadlines, and solutions that break
+                  as soon as they&apos;re deployed.
                 </p>
 
                 <p className="text-lg sm:text-xl leading-relaxed">
-                  <span className="font-bold text-white">Our Solution:</span> A team of battle-tested engineers who understand that
-                  great software isn't just about lines of code—it's about solving real problems and creating lasting value.
+                  <span className="font-bold text-white">Our Solution:</span> A
+                  team of battle-tested engineers who understand that great
+                  software isn&apos;t just about lines of code—it&apos;s about solving
+                  real problems and creating lasting value.
                 </p>
 
                 <p className="text-lg sm:text-xl leading-relaxed">
-                  <span className="font-bold text-white">The Result:</span> Over 500 successful projects, countless satisfied clients,
-                  and a reputation for delivering bulletproof solutions that actually work.
+                  <span className="font-bold text-white">The Result:</span> Over
+                  500 successful projects, countless satisfied clients, and a
+                  reputation for delivering bulletproof solutions that actually
+                  work.
                 </p>
               </div>
             </div>
@@ -86,7 +103,9 @@ export default function AboutContentSection() {
             <div className="text-center space-y-4 sm:space-y-6">
               <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-slate-200 border border-slate-300">
                 <Target className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600 mr-2" />
-                <span className="text-sm sm:text-base text-slate-800 font-semibold">Our Values</span>
+                <span className="text-sm sm:text-base text-slate-800 font-semibold">
+                  Our Values
+                </span>
               </div>
 
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight">
@@ -136,15 +155,20 @@ export default function AboutContentSection() {
                   Proven <span className="text-slate-200">Track Record</span>
                 </h3>
                 <p className="text-lg sm:text-xl text-slate-300">
-                  Numbers don't lie. Here's what we've accomplished together.
+                  Numbers don&apos;t lie. Here&apos;s what we&apos;ve accomplished together.
                 </p>
               </div>
 
               <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
                 {achievements.map((achievement, index) => (
-                  <div key={index} className="group flex items-center space-x-2 sm:space-x-3 rounded-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-slate-800/80 to-slate-700/80 border border-slate-600/50 hover:border-slate-500/50 backdrop-blur-sm transition-all duration-300 hover:scale-105">
+                  <div
+                    key={index}
+                    className="group flex items-center space-x-2 sm:space-x-3 rounded-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-slate-800/80 to-slate-700/80 border border-slate-600/50 hover:border-slate-500/50 backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                  >
                     <Star className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 group-hover:text-slate-300 transition-colors duration-300" />
-                    <span className="text-white font-bold text-xs sm:text-sm">{achievement}</span>
+                    <span className="text-white font-bold text-xs sm:text-sm">
+                      {achievement}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -162,8 +186,11 @@ export default function AboutContentSection() {
                   <span className="block text-slate-200">Amazing?</span>
                 </h3>
                 <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed px-2">
-                  Join hundreds of satisfied clients who chose excellence over mediocrity.
-                  <span className="block mt-2 font-semibold text-slate-200">Let's create something extraordinary together.</span>
+                  Join hundreds of satisfied clients who chose excellence over
+                  mediocrity.
+                  <span className="block mt-2 font-semibold text-slate-200">
+                    Let&apos;s create something extraordinary together.
+                  </span>
                 </p>
               </div>
 

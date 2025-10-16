@@ -1,7 +1,13 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import LayoutContainer from "@/components/layout/LayoutContainer";
-import { features, highlights, ArrowRight, CheckCircle, Star, Zap, Shield, TrendingUp } from "@/lib/constants";
+import {
+  features,
+  highlights,
+  ArrowRight,
+  CheckCircle,
+  Star,
+  TrendingUp,
+} from "@/lib/constants";
 
 export default function FeaturesSection() {
   return (
@@ -28,7 +34,9 @@ export default function FeaturesSection() {
           <div className="text-center space-y-6 sm:space-y-8">
             <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-slate-800/50 border border-slate-600/30 backdrop-blur-sm">
               <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 mr-2" />
-              <span className="text-sm sm:text-base text-slate-300 font-semibold">Why We Dominate</span>
+              <span className="text-sm sm:text-base text-slate-300 font-semibold">
+                Why We Dominate
+              </span>
             </div>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight">
@@ -37,8 +45,13 @@ export default function FeaturesSection() {
             </h2>
 
             <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-300 font-medium leading-relaxed px-4">
-              Simple. We deliver <span className="font-bold text-slate-200">results that matter.</span>
-              <span className="block mt-2 text-base sm:text-lg text-slate-400">No excuses. Just execution.</span>
+              Simple. We deliver{" "}
+              <span className="font-bold text-slate-200">
+                results that matter.
+              </span>
+              <span className="block mt-2 text-base sm:text-lg text-slate-400">
+                No excuses. Just execution.
+              </span>
             </p>
           </div>
 
@@ -75,14 +88,21 @@ export default function FeaturesSection() {
 
                       {/* Enhanced benefits list */}
                       <ul className="space-y-2 sm:space-y-3">
-                        {feature.benefits.slice(0, 3).map((benefit, benefitIndex) => (
-                          <li key={benefitIndex} className="flex items-center text-slate-400 group-hover:text-slate-300 transition-colors duration-300">
-                            <div className="flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-slate-600 mr-2 sm:mr-3 flex-shrink-0">
-                              <CheckCircle className="w-2 h-2 sm:w-3 sm:h-3 text-white" />
-                            </div>
-                            <span className="font-medium text-sm sm:text-base">{benefit}</span>
-                          </li>
-                        ))}
+                        {feature.benefits
+                          .slice(0, 3)
+                          .map((benefit, benefitIndex) => (
+                            <li
+                              key={benefitIndex}
+                              className="flex items-center text-slate-400 group-hover:text-slate-300 transition-colors duration-300"
+                            >
+                              <div className="flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-slate-600 mr-2 sm:mr-3 flex-shrink-0">
+                                <CheckCircle className="w-2 h-2 sm:w-3 sm:h-3 text-white" />
+                              </div>
+                              <span className="font-medium text-sm sm:text-base">
+                                {benefit}
+                              </span>
+                            </li>
+                          ))}
                       </ul>
                     </div>
 
@@ -104,15 +124,23 @@ export default function FeaturesSection() {
                   Built for <span className="text-slate-200">Champions</span>
                 </h3>
                 <p className="text-lg sm:text-xl text-slate-300">
-                  Trusted by those who demand <span className="font-semibold text-slate-200">excellence</span>
+                  Trusted by those who demand{" "}
+                  <span className="font-semibold text-slate-200">
+                    excellence
+                  </span>
                 </p>
               </div>
 
               <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
                 {highlights.map((highlight, index) => (
-                  <div key={index} className="group flex items-center space-x-2 sm:space-x-3 rounded-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-slate-800/80 to-slate-700/80 border border-slate-600/50 hover:border-slate-500/50 backdrop-blur-sm transition-all duration-300 hover:scale-105">
+                  <div
+                    key={index}
+                    className="group flex items-center space-x-2 sm:space-x-3 rounded-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-slate-800/80 to-slate-700/80 border border-slate-600/50 hover:border-slate-500/50 backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                  >
                     <Star className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 group-hover:text-slate-300 transition-colors duration-300" />
-                    <span className="text-white font-bold text-xs sm:text-sm">{highlight}</span>
+                    <span className="text-white font-bold text-xs sm:text-sm">
+                      {highlight}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -129,8 +157,13 @@ export default function FeaturesSection() {
                   Ready to <span className="text-slate-200">Dominate?</span>
                 </h3>
                 <p className="text-lg sm:text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed px-2">
-                  Join the elite. <span className="font-semibold text-slate-100">Transform your business today.</span>
-                  <span className="block mt-2 text-base sm:text-lg text-slate-300">Because average is not in our vocabulary.</span>
+                  Join the elite.{" "}
+                  <span className="font-semibold text-slate-100">
+                    Transform your business today.
+                  </span>
+                  <span className="block mt-2 text-base sm:text-lg text-slate-300">
+                    Because average is not in our vocabulary.
+                  </span>
                 </p>
               </div>
 
@@ -157,16 +190,28 @@ export default function FeaturesSection() {
               {/* Additional trust metrics */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 pt-8 sm:pt-12 text-center">
                 <div className="space-y-2">
-                  <div className="text-2xl sm:text-3xl font-bold text-slate-200">500+</div>
-                  <div className="text-sm sm:text-base text-slate-400">Projects Delivered</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-slate-200">
+                    500+
+                  </div>
+                  <div className="text-sm sm:text-base text-slate-400">
+                    Projects Delivered
+                  </div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-2xl sm:text-3xl font-bold text-slate-200">99.8%</div>
-                  <div className="text-sm sm:text-base text-slate-400">Client Satisfaction</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-slate-200">
+                    99.8%
+                  </div>
+                  <div className="text-sm sm:text-base text-slate-400">
+                    Client Satisfaction
+                  </div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-2xl sm:text-3xl font-bold text-slate-200">24/7</div>
-                  <div className="text-sm sm:text-base text-slate-400">Expert Support</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-slate-200">
+                    24/7
+                  </div>
+                  <div className="text-sm sm:text-base text-slate-400">
+                    Expert Support
+                  </div>
                 </div>
               </div>
             </div>

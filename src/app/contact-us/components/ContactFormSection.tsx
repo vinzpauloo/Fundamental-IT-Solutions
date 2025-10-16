@@ -1,8 +1,22 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import LayoutContainer from "@/components/layout/LayoutContainer";
-import { Phone, Mail, MapPin, Clock, MessageCircle, Calendar, Linkedin, Twitter, Github, Facebook, ArrowRight, CheckCircle, Star } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Calendar,
+  ArrowRight,
+  Star,
+} from "lucide-react";
 
 const contactMethods = [
   {
@@ -10,22 +24,22 @@ const contactMethods = [
     title: "Phone",
     description: "Speak directly with our team",
     value: "+1 (555) 123-4567",
-    action: "Call Now"
+    action: "Call Now",
   },
   {
     icon: Mail,
     title: "Email",
     description: "Send us a detailed message",
     value: "hello@fundamental-it.com",
-    action: "Send Email"
+    action: "Send Email",
   },
   {
     icon: Calendar,
     title: "Schedule",
     description: "Book a consultation call",
     value: "Free 30-minute consultation",
-    action: "Schedule Call"
-  }
+    action: "Schedule Call",
+  },
 ];
 
 const officeInfo = [
@@ -34,36 +48,39 @@ const officeInfo = [
     location: "San Francisco, CA",
     address: "123 Tech Street, San Francisco, CA 94105",
     phone: "+1 (555) 123-4567",
-    hours: "Mon-Fri: 9AM-6PM PST"
+    hours: "Mon-Fri: 9AM-6PM PST",
   },
   {
     title: "Development Hub",
     location: "Austin, TX",
     address: "456 Innovation Blvd, Austin, TX 78701",
     phone: "+1 (555) 123-4568",
-    hours: "Mon-Fri: 8AM-5PM CST"
-  }
+    hours: "Mon-Fri: 8AM-5PM CST",
+  },
 ];
 
 const testimonials = [
   {
     name: "Sarah Johnson",
     role: "CTO, TechCorp",
-    content: "Working with Fundamental IT was a game-changer for our business. They delivered exactly what we needed, on time and within budget.",
-    rating: 5
+    content:
+      "Working with Fundamental IT was a game-changer for our business. They delivered exactly what we needed, on time and within budget.",
+    rating: 5,
   },
   {
     name: "Michael Chen",
     role: "Founder, StartupXYZ",
-    content: "The team's expertise and professionalism exceeded our expectations. Highly recommend their services!",
-    rating: 5
+    content:
+      "The team's expertise and professionalism exceeded our expectations. Highly recommend their services!",
+    rating: 5,
   },
   {
     name: "Emily Rodriguez",
     role: "Product Manager, InnovateCo",
-    content: "Outstanding communication and technical skills. They made complex development look effortless.",
-    rating: 5
-  }
+    content:
+      "Outstanding communication and technical skills. They made complex development look effortless.",
+    rating: 5,
+  },
 ];
 
 export default function ContactFormSection() {
@@ -90,14 +107,17 @@ export default function ContactFormSection() {
                     Get In <span className="text-slate-200">Touch</span>
                   </h2>
                   <p className="text-lg sm:text-xl text-slate-300 leading-relaxed">
-                    Ready to start your next project? Fill out the form below and we'll get back to you within 24 hours.
+                    Ready to start your next project? Fill out the form below
+                    and we&apos;ll get back to you within 24 hours.
                   </p>
                 </div>
 
                 <form className="space-y-4 sm:space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div className="space-y-2">
-                      <label className="text-slate-200 font-medium text-sm sm:text-base">First Name</label>
+                      <label className="text-slate-200 font-medium text-sm sm:text-base">
+                        First Name
+                      </label>
                       <Input
                         type="text"
                         placeholder="John"
@@ -105,7 +125,9 @@ export default function ContactFormSection() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-slate-200 font-medium text-sm sm:text-base">Last Name</label>
+                      <label className="text-slate-200 font-medium text-sm sm:text-base">
+                        Last Name
+                      </label>
                       <Input
                         type="text"
                         placeholder="Doe"
@@ -115,7 +137,9 @@ export default function ContactFormSection() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-slate-200 font-medium text-sm sm:text-base">Email</label>
+                    <label className="text-slate-200 font-medium text-sm sm:text-base">
+                      Email
+                    </label>
                     <Input
                       type="email"
                       placeholder="john@example.com"
@@ -124,7 +148,9 @@ export default function ContactFormSection() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-slate-200 font-medium text-sm sm:text-base">Company</label>
+                    <label className="text-slate-200 font-medium text-sm sm:text-base">
+                      Company
+                    </label>
                     <Input
                       type="text"
                       placeholder="Your Company"
@@ -133,7 +159,9 @@ export default function ContactFormSection() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-slate-200 font-medium text-sm sm:text-base">Project Type</label>
+                    <label className="text-slate-200 font-medium text-sm sm:text-base">
+                      Project Type
+                    </label>
                     <select className="w-full p-3 sm:p-4 bg-slate-800/50 border border-slate-600 text-white rounded-lg focus:border-slate-500 focus:outline-none">
                       <option value="">Select project type</option>
                       <option value="web">Web Development</option>
@@ -146,7 +174,9 @@ export default function ContactFormSection() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-slate-200 font-medium text-sm sm:text-base">Project Details</label>
+                    <label className="text-slate-200 font-medium text-sm sm:text-base">
+                      Project Details
+                    </label>
                     <textarea
                       rows={4}
                       placeholder="Tell us about your project, timeline, and requirements..."
@@ -175,13 +205,17 @@ export default function ContactFormSection() {
                   Other Ways to <span className="text-slate-700">Connect</span>
                 </h3>
                 <p className="text-lg sm:text-xl text-slate-600 leading-relaxed">
-                  Choose the method that works best for you. We're always ready to help.
+                  Choose the method that works best for you. We&apos;re always ready
+                  to help.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 gap-4 sm:gap-6">
                 {contactMethods.map((method, index) => (
-                  <Card key={index} className="group relative overflow-hidden border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+                  <Card
+                    key={index}
+                    className="group relative overflow-hidden border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
+                  >
                     <CardHeader className="pb-3 sm:pb-4">
                       <div className="flex items-center space-x-4 sm:space-x-6">
                         <div className="inline-flex p-3 sm:p-4 rounded-xl bg-slate-700 group-hover:scale-110 transition-all duration-300">
@@ -199,7 +233,9 @@ export default function ContactFormSection() {
                     </CardHeader>
                     <CardContent className="pt-0">
                       <div className="space-y-3 sm:space-y-4">
-                        <p className="text-slate-800 font-semibold text-sm sm:text-base">{method.value}</p>
+                        <p className="text-slate-800 font-semibold text-sm sm:text-base">
+                          {method.value}
+                        </p>
                         <Button
                           variant="outline"
                           size="sm"
@@ -231,25 +267,38 @@ export default function ContactFormSection() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 {officeInfo.map((office, index) => (
-                  <div key={index} className="relative p-6 sm:p-8 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-slate-600/30 transition-all duration-300">
+                  <div
+                    key={index}
+                    className="relative p-6 sm:p-8 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-slate-600/30 transition-all duration-300"
+                  >
                     <div className="space-y-4 sm:space-y-6">
                       <div>
-                        <h4 className="text-xl sm:text-2xl font-bold text-white mb-2">{office.title}</h4>
-                        <p className="text-slate-300 font-semibold">{office.location}</p>
+                        <h4 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                          {office.title}
+                        </h4>
+                        <p className="text-slate-300 font-semibold">
+                          {office.location}
+                        </p>
                       </div>
 
                       <div className="space-y-3 sm:space-y-4 text-slate-200">
                         <div className="flex items-start space-x-3">
                           <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm sm:text-base">{office.address}</span>
+                          <span className="text-sm sm:text-base">
+                            {office.address}
+                          </span>
                         </div>
                         <div className="flex items-center space-x-3">
                           <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 flex-shrink-0" />
-                          <span className="text-sm sm:text-base">{office.phone}</span>
+                          <span className="text-sm sm:text-base">
+                            {office.phone}
+                          </span>
                         </div>
                         <div className="flex items-center space-x-3">
                           <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 flex-shrink-0" />
-                          <span className="text-sm sm:text-base">{office.hours}</span>
+                          <span className="text-sm sm:text-base">
+                            {office.hours}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -267,21 +316,28 @@ export default function ContactFormSection() {
                 <span className="block text-slate-700">Clients Say</span>
               </h2>
               <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-600 font-medium leading-relaxed px-4">
-                Don't just take our word for it. Here's what our clients have to say about working with us.
+                Don&apos;t just take our word for it. Here&apos;s what our clients have to
+                say about working with us.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="group relative overflow-hidden border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                <Card
+                  key={index}
+                  className="group relative overflow-hidden border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+                >
                   <CardHeader className="pb-4 sm:pb-6">
                     <div className="flex items-center space-x-1 mb-3 sm:mb-4">
                       {[...Array(testimonial.rating)].map((_, starIndex) => (
-                        <Star key={starIndex} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" />
+                        <Star
+                          key={starIndex}
+                          className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"
+                        />
                       ))}
                     </div>
                     <CardDescription className="text-slate-600 text-base sm:text-lg leading-relaxed group-hover:text-slate-700 transition-colors italic">
-                      "{testimonial.content}"
+                      &ldquo;{testimonial.content}&rdquo;
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="pt-0">
@@ -289,7 +345,9 @@ export default function ContactFormSection() {
                       <CardTitle className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-slate-800 transition-colors">
                         {testimonial.name}
                       </CardTitle>
-                      <p className="text-slate-500 text-sm sm:text-base">{testimonial.role}</p>
+                      <p className="text-slate-500 text-sm sm:text-base">
+                        {testimonial.role}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -308,8 +366,11 @@ export default function ContactFormSection() {
                   <span className="block text-slate-200">Started?</span>
                 </h3>
                 <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed px-2">
-                  Join hundreds of satisfied clients who chose us to bring their vision to life.
-                  <span className="block mt-2 font-semibold text-slate-200">Your next big project starts here.</span>
+                  Join hundreds of satisfied clients who chose us to bring their
+                  vision to life.
+                  <span className="block mt-2 font-semibold text-slate-200">
+                    Your next big project starts here.
+                  </span>
                 </p>
               </div>
 

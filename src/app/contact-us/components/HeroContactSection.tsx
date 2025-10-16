@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { ArrowRight, Phone, Mail, Clock } from "lucide-react";
 
 export default function HeroContactSection() {
   return (
@@ -39,8 +39,10 @@ export default function HeroContactSection() {
           <div className="max-w-3xl mx-auto px-2">
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-300 font-medium leading-relaxed">
               Ready to turn your vision into reality?
-              <span className="text-slate-200 font-bold"> Let's talk</span>
-              <span className="block mt-2 text-base sm:text-lg text-slate-400">We're here to help you build something extraordinary.</span>
+              <span className="text-slate-200 font-bold"> Let&apos;s talk</span>
+              <span className="block mt-2 text-base sm:text-lg text-slate-400">
+                We&apos;re here to help you build something extraordinary.
+              </span>
             </p>
           </div>
 
@@ -78,8 +80,12 @@ export default function HeroContactSection() {
                   <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div className="space-y-1 sm:space-y-2">
-                  <h3 className="text-lg sm:text-xl font-bold text-white">Phone</h3>
-                  <p className="text-slate-300 text-sm sm:text-base">+1 (555) 123-4567</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">
+                    Phone
+                  </h3>
+                  <p className="text-slate-300 text-sm sm:text-base">
+                    +1 (555) 123-4567
+                  </p>
                 </div>
               </div>
             </div>
@@ -91,8 +97,12 @@ export default function HeroContactSection() {
                   <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div className="space-y-1 sm:space-y-2">
-                  <h3 className="text-lg sm:text-xl font-bold text-white">Email</h3>
-                  <p className="text-slate-300 text-sm sm:text-base">hello@fundamental-it.com</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">
+                    Email
+                  </h3>
+                  <p className="text-slate-300 text-sm sm:text-base">
+                    hello@fundamental-it.com
+                  </p>
                 </div>
               </div>
             </div>
@@ -104,8 +114,12 @@ export default function HeroContactSection() {
                   <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div className="space-y-1 sm:space-y-2">
-                  <h3 className="text-lg sm:text-xl font-bold text-white">Response</h3>
-                  <p className="text-slate-300 text-sm sm:text-base">Within 24 hours</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">
+                    Response
+                  </h3>
+                  <p className="text-slate-300 text-sm sm:text-base">
+                    Within 24 hours
+                  </p>
                 </div>
               </div>
             </div>

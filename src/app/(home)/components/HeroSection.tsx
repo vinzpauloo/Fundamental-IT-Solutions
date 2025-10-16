@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Shield, Rocket, Sparkles } from "lucide-react";
+import { ArrowRight, Zap, Shield, Sparkles } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -26,8 +26,12 @@ export default function HeroSection() {
           <div className="space-y-4 sm:space-y-6">
             <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-tight">
               <span className="block text-white drop-shadow-2xl">Code.</span>
-              <span className="block text-slate-300 drop-shadow-2xl">Deploy.</span>
-              <span className="block text-slate-400 drop-shadow-2xl">Dominate.</span>
+              <span className="block text-slate-300 drop-shadow-2xl">
+                Deploy.
+              </span>
+              <span className="block text-slate-400 drop-shadow-2xl">
+                Dominate.
+              </span>
             </h1>
 
             {/* Animated accent line */}
@@ -40,8 +44,13 @@ export default function HeroSection() {
           <div className="max-w-3xl mx-auto px-2">
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-300 font-medium leading-relaxed">
               Turn your vision into reality with
-              <span className="text-slate-200 font-bold"> bulletproof code</span>
-              <span className="block mt-2 text-base sm:text-lg text-slate-400">Built by elite engineers. Delivered with precision.</span>
+              <span className="text-slate-200 font-bold">
+                {" "}
+                bulletproof code
+              </span>
+              <span className="block mt-2 text-base sm:text-lg text-slate-400">
+                Built by elite engineers. Delivered with precision.
+              </span>
             </p>
           </div>
 
