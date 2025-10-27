@@ -23,7 +23,7 @@ export default function Navigator() {
 
   return (
     <Fragment>
-      <div className="hidden md:block">
+      <div className="hidden md:block text-white">
         <NavigationMenu viewport={false}>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -68,7 +68,7 @@ export default function Navigator() {
           </DropdownMenuTrigger>
           <DropdownMenuContent
             align="end"
-            className="w-48 bg-[#0D1B2A] border-[#415A77]"
+            className="w-48 bg-[#0D1B2A] border-none"
           >
             <DropdownMenuItem asChild>
               <Link
