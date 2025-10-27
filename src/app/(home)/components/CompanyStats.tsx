@@ -5,10 +5,10 @@ import { ArrowRight } from "lucide-react";
 export default function CompanyStats() {
   return (
     <LayoutContainer
-      className="flex flex-col gap-12 justify-center items-center min-h-[500px] md:min-h-[400px]"
+      className="flex flex-col gap-2 md:gap-12 justify-center items-center min-h-[600px] md:min-h-[400px]"
       outerClassName="bg-[#f8f8f8]"
     >
-      <h2 className="text-xl font-normal text-center">
+      <h2 className="text-xl font-semibold text-center">
         In today's ruthless software engineering job market, where skilled
         developers are hard to find and even harder to retain, fast-moving tech
         companies need a smart recruitment strategy to keep their best people

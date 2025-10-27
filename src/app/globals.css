@@ -54,7 +54,7 @@ body {
 html {
   scrollbar-width: thin;
   scrollbar-color: rgb(148 163 184 / 0.5) transparent;
-  scrollbar-gutter: stable;
+  /* scrollbar-gutter: stable; */
 }
 
 :root {
