@@ -19,6 +19,17 @@ export const metadata: Metadata = {
   title: "Fundamental IT Solutions",
   description:
     "Next Generation IT Solutions, Powered by Fundamental IT Solutions",
+  icons: {
+    icon: [
+      {
+        url: "/fis-logo-circle.png",
+        type: "image/png",
+        sizes: "any",
+      },
+    ],
+    shortcut: "/fis-logo-circle.png",
+    apple: "/fis-logo-circle.png",
+  },
 };
 
 export default function RootLayout({
