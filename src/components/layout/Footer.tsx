@@ -1,3 +1,5 @@
+import Image from "next/image";
+import type { Route } from "next";
 import LayoutContainer from "./LayoutContainer";
 import Link from "next/link";
 import {
@@ -10,13 +12,15 @@ import {
   MapPin,
 } from "lucide-react";
 
+type NavHref = Route | `${Route}#${string}`;
+
 const serviceLinks = [
   { label: "Web & App Development", href: "/services" },
   { label: "Cloud Solutions", href: "/services#cloud" },
   { label: "Cybersecurity", href: "/services#cybersecurity" },
   { label: "UI/UX Design", href: "/services#design" },
   { label: "IT Consulting", href: "/services#consulting" },
-];
+] satisfies { label: string; href: NavHref }[];
 
 const companyLinks = [
   { label: "About Us", href: "/about-us" },
@@ -25,7 +29,7 @@ const companyLinks = [
   { label: "Case Studies", href: "/case-studies" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact-us" },
-];
+] satisfies { label: string; href: NavHref }[];
 
 const Footer = () => {
   return (
@@ -34,9 +38,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
           <div className="space-y-6">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#172941] flex items-center justify-center font-['Pacifico'] text-2xl">
-                F
-              </div>
+              <Image
+                src="/fis-logo.jpg"
+                alt="Fundamental IT Solutions logo mark"
+                width={48}
+                height={48}
+                className="w-12 h-12 rounded-2xl object-cover"
+                priority
+              />
               <div>
                 <p className="font-['Pacifico'] text-xl">Fundamental IT</p>
                 <p className="text-sm tracking-[0.4em] uppercase text-slate-300">

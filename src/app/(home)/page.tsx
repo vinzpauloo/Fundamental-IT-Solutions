@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Route } from "next";
 import Link from "next/link";
 import { ArrowRight, Play, Brain, Cloud, Shield, Leaf } from "lucide-react";
 
@@ -50,7 +51,7 @@ const spotlightCards = [
     body: "Join a distributed team of architects, engineers, and designers solving bold problems.",
     href: "/careers",
   },
-];
+] satisfies { title: string; body: string; href: Route }[];
 
 export default function Home() {
   return (

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import type { Route } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -28,9 +29,14 @@ const Header = () => {
     <header className="w-full flex justify-center px-4 pt-6">
       <div className="nav-floating w-full flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center space-x-3">
-          <div className="w-11 h-11 rounded-full bg-[#0D1B2A] text-white flex items-center justify-center font-['Pacifico'] text-xl">
-            F
-          </div>
+          <Image
+            src="/fis-logo.jpg"
+            alt="Fundamental IT Solutions logo"
+            width={44}
+            height={44}
+            className="w-11 h-11 rounded-full object-cover"
+            priority
+          />
           <div>
             <span className="font-['Pacifico'] text-lg text-[#0D1B2A] leading-none">
               Fundamental
