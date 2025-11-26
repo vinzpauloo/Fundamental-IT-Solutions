@@ -33,7 +33,7 @@ const companyLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0D1B2A] text-white pt-20 pb-12 mt-16">
+    <footer className="bg-[#0D1B2A] text-white pt-20 pb-12 border-solid border-t border-white/100">
       <LayoutContainer className="px-6">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
           <div className="space-y-6">
