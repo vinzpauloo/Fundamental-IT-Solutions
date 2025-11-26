@@ -22,12 +22,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/fis-logo-circle.png",
+        url: "/fis-logo.jpg",
         type: "image/png",
         sizes: "any",
       },
     ],
-    shortcut: "/fis-logo-circle.png",
+    shortcut: "/fis-logo.jpg",
     apple: "/fis-logo-circle.png",
   },
 };
