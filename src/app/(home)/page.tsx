@@ -13,30 +13,44 @@ const heroStats = [
 const bentoHighlights = [
   {
     title: "AI-First Architecture",
-    body: "Predictive, intelligent, automation-ready platforms that adapt as fast as your business evolves.",
+    body: "Every solution we create is designed with artificial intelligence at its core, enabling predictive capabilities, automated optimization, and intelligent decision-making. ​",
     tags: ["Machine Learning", "Neural Networks", "Predictive Analytics"],
-    maxWidth: "max-w-md",
+    maxWidth: "w-[100%] sm:w-[100%] md:w-[90%] lg:max-w-[60%]",
+    titlePosition: "flex-row",
+    titleAlignment: "justify-start items-start",
+    bgcolor: "bg-[#0D1B2A]",
+ 
     icon: Brain,
     span: "lg:col-span-2",
   },
   {
     title: "Quantum-Ready Cloud",
-    body: "Future-proof infrastructure engineered for ultra low latency workloads and limitless scale.",
-    maxWidth: "max-w-md",
+    body: "Future-proof infrastructure that scales infinitely and adapts to quantum computingadvances ​",
+    maxWidth: "w-[100%] sm:w-[100%] md:w-[90%] lg:max-w-[30%]",
+    bgcolor: "bg-gradient-to-r from-[#0D1B2A] to-[#2563EB]",
+    titlePosition: "flex-row md:flex-row lg:flex-col",
+    titleAlignment: "justify-start items-start md:justify-start md:items-start lg:justify-center lg:items-center",
     icon: Cloud,
   },
   {
     title: "Zero-Trust Security",
-    body: "Military-grade protection that assumes breach and verifies every interaction.",
-    maxWidth: "max-w-md",
-    icon: Shield,
+    body: "Military-grade security architecture that assumes breach and verifies every interaction. ​",
+    maxWidth: "max-w-[100%] sm:w-[100%] md:w-[90%] lg:max-w-[45%]",
+    bgcolor: "bg-gradient-to-r from-[#3B82F6] to-[#9333EA]",
+    titlePosition: "flex-row md:flex-row lg:flex-col",
+    titleAlignment: "justify-start items-start md:justify-start md:items-start lg:justify-center lg:items-center",
+       icon: Shield,
   },
   {
     title: "Sustainable Tech",
     body: "Carbon-neutral infrastructure with renewable energy optimisation and green compute practices.",
-    maxWidth: "max-w-md",
-    icon: Leaf,
+    maxWidth: "max-w-[100%] sm:w-[100%] md:w-[90%] lg:max-w-[45%]",
+    bgcolor: "bg-gradient-to-r from-[#22C55E] to-[#0D9488]",
+    titlePosition: "flex-row md:flex-row lg:flex-col",
+    titleAlignment: "justify-start items-start md:justify-start md:items-start lg:justify-center lg:items-center",
+      icon: Leaf,
   },
+ 
 ];
 
 const spotlightCards = [
@@ -178,39 +192,46 @@ function TransformingTomorrow() {
   return (
     <section className="py-24 bg-[#E8F4FD]">
       <div className="max-w-6xl mx-auto px-6 space-y-16">
-        <div className="text-center space-y-6">
+        <div className="text-center space-y-4 md:space-y-6 lg:space-y-6">
           {/* <p className="text-sm uppercase tracking-[0.4em] text-[#0D1B2A]">
             Transforming Tomorrow
           </p> */}
           <h2 className="text-4xl md:text-5xl font-black text-[#0D1B2A]">
           Transforming Tomorrow
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl lg:text-xl text-slate-600 max-w-3xl mx-auto">
           We don't just build software – we architect digital ecosystems that evolve, adapt, and thrive in an ever-changing technological landscape.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {bentoHighlights.map((card) => (
             <div
               key={card.title}
               className={`bento-card ${card.span ?? ""} bg-white/80 ${card.maxWidth ?? ""}`}
             >
-              <div className="flex items-start gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-[#0D1B2A] text-white flex items-center justify-center">
+              <div className="flex flex-col items-start gap-4 relative w-full">
+                {/* Icon */}
+                <div className={`relative w-full flex ${card.titlePosition} ${card.titleAlignment}  gap-4`}> 
+                <div className={`w-12 h-12  md:flex lg:flex rounded-2xl   
+                 text-white flex items-center justify-center ${card.bgcolor ?? ""}`}>
                   <card.icon className="w-7 h-7" />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-semibold text-[#0D1B2A] mb-2">
+<div className=" relative flex justify-start items-center"> 
+                <h3 className="text-xl md:text-2xl lg:text-2xl font-semibold text-[#0D1B2A]  mb-2">
                     {card.title}
                   </h3>
-                  <p className="text-slate-600 mb-4">{card.body}</p>
+                  </div>
+                  </div>
+                <div className= " mt-[-20px] md:mt-[-20px] lg:mt-[-20px] ">
+                 
+                  <p className={`flex text-center md:text-start lg:text-center  text-base mt-[20px] md:mt-[20px] lg:mt-[20px] md:text-l lg:text-l text-slate-600 mb-4`}>{card.body}</p>
                   {card.tags ? (
                     <div className="flex flex-wrap gap-2">
                       {card.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-4 py-2 rounded-full bg-[#E8F4FD] text-sm text-[#0D1B2A]"
+                          className="px-4 py-2 rounded-full bg-[#FFFFFF] text-xs md:text-sm lg:text-sm text-[#0D1B2A]"
                         >
                           {tag}
                         </span>
