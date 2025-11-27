@@ -15,22 +15,26 @@ const bentoHighlights = [
     title: "AI-First Architecture",
     body: "Predictive, intelligent, automation-ready platforms that adapt as fast as your business evolves.",
     tags: ["Machine Learning", "Neural Networks", "Predictive Analytics"],
+    maxWidth: "max-w-md",
     icon: Brain,
     span: "lg:col-span-2",
   },
   {
     title: "Quantum-Ready Cloud",
     body: "Future-proof infrastructure engineered for ultra low latency workloads and limitless scale.",
+    maxWidth: "max-w-md",
     icon: Cloud,
   },
   {
     title: "Zero-Trust Security",
     body: "Military-grade protection that assumes breach and verifies every interaction.",
+    maxWidth: "max-w-md",
     icon: Shield,
   },
   {
     title: "Sustainable Tech",
     body: "Carbon-neutral infrastructure with renewable energy optimisation and green compute practices.",
+    maxWidth: "max-w-md",
     icon: Leaf,
   },
 ];
@@ -68,46 +72,50 @@ function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center bg-white hero-pattern">
       <div className="absolute inset-0 grid-pattern opacity-50" />
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-14 md:py-24 lg:py-24 w-full ">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-10">
-            <div className="inline-flex items-center bg-[#E8F4FD] px-4 py-2 rounded-full">
+          <div className="space-y-6 md:space-y-10 lg:space-y-10      ">
+          {/* Next-Generation Partner */}
+              <div className="inline-flex items-center bg-[#E8F4FD] px-4 py-2 rounded-full">
               <span className="w-2 h-2 rounded-full bg-[#0D1B2A] mr-3 animate-pulse" />
               <span className="text-xs uppercase tracking-[0.4em] text-[#0D1B2A] font-semibold">
                 Next-Generation Partner
               </span>
             </div>
-            <div>
-              <h1 className="text-5xl sm:text-7xl font-black text-[#0D1B2A] leading-tight">
-                Digital{" "}
+            {/* Digital Innovation Redefined */}
+            <div className="   ">
+              <h1 className="text-4xl md:text-7xl lg:text-7xl font-black text-[#0D1B2A] leading-tight">
+                Digital{" "}<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0D1B2A] to-blue-600">
                   Innovation
                 </span>{" "}
                 <span className="block">Redefined</span>
               </h1>
-              <p className="text-xl text-slate-600 mt-6">
+              <p className="text-base md:text-xl lg:text-xl text-slate-600 mt-2 md:mt-6 lg:mt-6">
                 We architect tomorrow&apos;s digital experiences today—from
                 AI-powered applications to quantum-ready cloud infrastructure.
               </p>
             </div>
+            {/* Explore Solutions */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/services"
-                className="bg-[#0D1B2A] text-white px-8 py-4 rounded-[8px] font-semibold text-lg inline-flex items-center justify-center shadow-lg hover:shadow-xl transition"
+                className="bg-[#0D1B2A] text-white px-8 py-2 md:py-4 lg:py-4 rounded-[8px] font-semibold text-lg inline-flex items-center justify-center shadow-lg hover:shadow-xl transition"
               >
                 Explore Solutions <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link
                 href="/case-studies"
-                className="border-2 border-[#0D1B2A] text-[#0D1B2A] px-8 py-4 rounded-[8px] font-semibold text-lg inline-flex items-center justify-center hover:bg-[#0D1B2A] hover:text-white transition"
+                className="border-2 border-[#0D1B2A] text-[#0D1B2A] px-8 py-2 md:py-4 lg:py-4 rounded-[8px] font-semibold text-lg inline-flex items-center justify-center hover:bg-[#0D1B2A] hover:text-white transition"
               >
                 Watch Demo <Play className="ml-2 w-5 h-5" />
               </Link>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10 md:mt-5 lg:mt-5 ">
               {heroStats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <p className="text-4xl font-bold counter-modern">
+                  <p className="text-2xl font-bold counter-modern">
                     {stat.value}
                   </p>
                   <p className="text-xs uppercase tracking-widest text-slate-500 mt-2">
@@ -117,7 +125,7 @@ function HeroSection() {
               ))}
             </div>
           </div>
-          <div className="relative">
+          <div className="relative w-[94%] mx-auto ">
             <div className="floating-element">
               <div className="relative rounded-[32px] overflow-hidden shadow-2xl">
                 <Image
@@ -131,7 +139,7 @@ function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#E8F4FD]/70 to-transparent" />
               </div>
             </div>
-            <div className="absolute -top-8 -right-8 w-24 h-24 bg-[#0D1B2A] rounded-full flex items-center justify-center text-white text-3xl floating-element">
+            <div className="absolute -top-8 -right-8 w-20 h-20 md:w-24 md:h-24 lg:w-24 lg:h-24 bg-[#0D1B2A] rounded-full flex items-center justify-center text-white text-3xl floating-element">
               <svg
                 width="38"
                 height="36"
@@ -145,7 +153,7 @@ function HeroSection() {
                 />
               </svg>
             </div>
-            <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-[#E8F4FD] rounded-full flex items-center justify-center text-[#0D1B2A] text-2xl floating-element">
+            <div className="absolute -bottom-6 -left-6 w-15 h-15 md:w-20 md:h-20 lg:w-20 lg:h-20 bg-[#E8F4FD] rounded-full flex items-center justify-center text-[#0D1B2A] text-2xl floating-element">
               <svg
                 width="25"
                 height="24"
@@ -186,7 +194,7 @@ function TransformingTomorrow() {
           {bentoHighlights.map((card) => (
             <div
               key={card.title}
-              className={`bento-card ${card.span ?? ""} bg-white/80`}
+              className={`bento-card ${card.span ?? ""} bg-white/80 ${card.maxWidth ?? ""}`}
             >
               <div className="flex items-start gap-4">
                 <div className="w-16 h-16 rounded-2xl bg-[#0D1B2A] text-white flex items-center justify-center">

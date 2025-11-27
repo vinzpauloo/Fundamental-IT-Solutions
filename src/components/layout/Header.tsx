@@ -28,9 +28,10 @@ const Header = () => {
   }, [pathname]);
 
   return (
-    <header className="w-[600px] h-[50px] mx-auto 
-    px-4 py-2
-    rounded-[50px] fixed top-5 left-0 right-0 z-50
+    <header className="  max-w-[767px] w-full h-[50px] mx-auto  py-1
+    px-4 md:py-2 
+    px-4 lg:py-2 
+    md:rounded-[50px] lg:rounded-[50px] fixed md:top-5 lg:top-5 left-0 right-0 z-50
     bg-white shadow-lg opacity-90 border border-[#0D1B2A]/10 backdrop-blur-xl">
 
       <LayoutContainer className="flex justify-between items-center">
@@ -48,7 +49,7 @@ const Header = () => {
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center space-x-6">
+        <nav className="hidden md:flex lg:flex items-center space-x-6">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -64,7 +65,7 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center space-x-3">
+        <div className="hidden md:flex lg:flex items-center space-x-3">
           {/* <Link
             href="/services"
             className="text-sm font-semibold text-[#0D1B2A] bg-[#E8F4FD] border border-[#0D1B2A]/10 px-5 py-2 rounded-full hover:bg-white transition-colors"
@@ -81,7 +82,7 @@ const Header = () => {
 
         <button
           type="button"
-          className="lg:hidden w-10 h-10 rounded-full bg-[#E8F4FD] text-[#0D1B2A] flex items-center justify-center"
+          className="lg:hidden md:hidden w-10 h-10 rounded-full bg-[#E8F4FD] text-[#0D1B2A] flex items-center justify-center"
           onClick={() => setIsOpen((prev) => !prev)}
         >
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -89,7 +90,7 @@ const Header = () => {
       </LayoutContainer>
 
       {isOpen ? (
-        <div className="lg:hidden fixed inset-x-4 top-28 rounded-2xl bg-white shadow-2xl border border-slate-100 p-6 space-y-4">
+        <div className="lg:hidden fixed inset-x-4 top-14 rounded-2xl bg-white shadow-2xl border border-slate-100 p-6 space-y-4">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
