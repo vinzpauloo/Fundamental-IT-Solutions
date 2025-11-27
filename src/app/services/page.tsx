@@ -64,47 +64,6 @@ const technologies = [
   { label: "TypeScript", abbr: "TS", color: "text-cyan-600", bg: "bg-cyan-50" },
 ];
 
-const caseStudies = [
-  {
-    title: "FinTech Revolution",
-    industry: "Financial Services",
-    summary:
-      "Developed a comprehensive banking platform, increasing engagement by 150% and reducing processing time by 80%.",
-    stats: [
-      { label: "User Growth", value: "150%" },
-      { label: "Faster Processing", value: "80%" },
-      { label: "Uptime", value: "99.9%" },
-    ],
-    image:
-      "https://readdy.ai/api/search-image?query=modern%20fintech%20banking%20application%20dashboard%20interface%20clean%20professional%20financial%20technology%20mobile%20app%20design%20blue%20gradient%20background%20sleek%20user%20interface%20digital%20banking%20platform&width=400&height=300&seq=case_study_1&orientation=landscape",
-  },
-  {
-    title: "HealthTech Innovation",
-    industry: "Healthcare",
-    summary:
-      "Built a telemedicine platform that connected 10,000+ patients with healthcare providers, improving access by 200%.",
-    stats: [
-      { label: "Patients", value: "10K+" },
-      { label: "Better Access", value: "200%" },
-      { label: "User Rating", value: "4.9/5" },
-    ],
-    image:
-      "https://readdy.ai/api/search-image?query=healthcare%20medical%20technology%20telemedicine%20platform%20doctor%20patient%20consultation%20interface%20modern%20healthcare%20app%20design%20clean%20medical%20dashboard%20digital%20health%20solution&width=400&height=300&seq=case_study_2&orientation=landscape",
-  },
-  {
-    title: "E-commerce Excellence",
-    industry: "Retail",
-    summary:
-      "Created a scalable platform that handled 1M+ transactions and increased conversion rates by 120% during peak seasons.",
-    stats: [
-      { label: "Transactions", value: "1M+" },
-      { label: "Conversion", value: "120%" },
-      { label: "Load Time", value: "0.5s" },
-    ],
-    image:
-      "https://readdy.ai/api/search-image?query=ecommerce%20online%20shopping%20platform%20modern%20retail%20website%20product%20catalog%20shopping%20cart%20interface%20digital%20commerce%20solution%20clean%20ecommerce%20design%20mobile%20shopping%20app&width=400&height=300&seq=case_study_3&orientation=landscape",
-  },
-];
 
 export default function ServicesPage() {
   return (

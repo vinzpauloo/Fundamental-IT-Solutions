@@ -1,21 +1,23 @@
+
 "use client";
 
 import Image from "next/image";
 import type { Route } from "next";
 import Link from "next/link";
+import LayoutContainer from "./LayoutContainer";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about-us" },
-  { label: "Services", href: "/services" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Insights", href: "/insights" },
-  { label: "Careers", href: "/careers" },
-  { label: "Contact", href: "/contact-us" },
+  { label: "Solutions", href: "/" },
+  { label: "Expertise", href: "/services" },
+  { label: "Works", href: "/careers" },
+  { label: "Team", href: "/about-us" },
 ] satisfies { label: string; href: Route }[];
+
+
 
 const Header = () => {
   const pathname = usePathname();
@@ -26,24 +28,23 @@ const Header = () => {
   }, [pathname]);
 
   return (
-    <header className="w-full flex justify-center px-4 pt-6">
-      <div className="nav-floating w-full flex items-center justify-between gap-4">
-        <Link href="/" className="flex items-center space-x-3">
+    <header className="w-[600px] h-[50px] mx-auto 
+    px-4 py-2
+    rounded-[50px] fixed top-5 left-0 right-0 z-50
+    bg-white shadow-lg opacity-90 border border-[#0D1B2A]/10 backdrop-blur-xl">
+
+      <LayoutContainer className="flex justify-between items-center">
+        <Link href="/" className="flex items-center space-x-2">
           <Image
-            src="/fis-logo.jpg"
-            alt="Fundamental IT Solutions logo"
-            width={44}
-            height={44}
-            className="w-11 h-11 rounded-full object-cover"
-            priority
+            src="/logo1.jpg"
+            alt="Fundamental IT Solutions Logo"
+            width={32}
+            height={32}
+            className="object-cover rounded-full"
           />
-          <div>
-            <span className="font-['Pacifico'] text-lg text-[#0D1B2A] leading-none">
-              Fundamental
-            </span>
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-500 mt-1">
-              IT Solutions
-            </p>
+          <div className="leading-tight">
+            <p className="text-xs font-bold text-[#0D1B2A]">Fundamental</p>
+            <p className="text-[10px] text-[#0D1B2A]">IT Solutions</p>
           </div>
         </Link>
 
@@ -64,15 +65,15 @@ const Header = () => {
         </nav>
 
         <div className="hidden lg:flex items-center space-x-3">
-          <Link
+          {/* <Link
             href="/services"
             className="text-sm font-semibold text-[#0D1B2A] bg-[#E8F4FD] border border-[#0D1B2A]/10 px-5 py-2 rounded-full hover:bg-white transition-colors"
           >
             Explore Solutions
-          </Link>
+          </Link> */}
           <Link
             href="/contact-us"
-            className="text-sm font-semibold text-white bg-[#0D1B2A] px-5 py-2 rounded-full hover:bg-[#132137] transition-colors"
+            className="text-sm font-semibold text-white bg-[#0D1B2A] px-3 py-1 h-7 rounded-[8px] hover:bg-[#132137] transition-colors"
           >
             Start Project
           </Link>
@@ -85,7 +86,7 @@ const Header = () => {
         >
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
-      </div>
+      </LayoutContainer>
 
       {isOpen ? (
         <div className="lg:hidden fixed inset-x-4 top-28 rounded-2xl bg-white shadow-2xl border border-slate-100 p-6 space-y-4">
