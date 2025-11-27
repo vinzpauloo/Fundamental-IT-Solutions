@@ -130,6 +130,10 @@ body {
   box-shadow: 0 32px 64px -12px rgba(13, 27, 42, 0.25);
 }
 
+.tech-card::before {
+  display: none;
+}
+
 .floating-element {
   animation: float 6s ease-in-out infinite;
 }

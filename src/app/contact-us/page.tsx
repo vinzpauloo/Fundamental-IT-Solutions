@@ -5,17 +5,17 @@ const contactDetails = [
   {
     icon: MapPin,
     heading: "Office Address",
-    lines: ["123 Innovation Drive", "Silicon Valley, CA 94025", "United States"],
+    lines: ["20th Drive, Upper Mckinley Rd", " Taguig, Metro Manila", "Philippines"],
   },
   {
     icon: Phone,
     heading: "Phone Number",
-    lines: ["+1 (555) 123-4567"],
+    lines: ["+63 9659700823"],
   },
   {
     icon: Mail,
     heading: "Email",
-    lines: ["hello@fundamentalit.com"],
+    lines: ["joanna-admin@fundamental-it-solutions.com"],
   },
   {
     icon: Clock,

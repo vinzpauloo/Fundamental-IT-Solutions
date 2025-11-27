@@ -39,7 +39,7 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex items-center space-x-4">
               <Image
-                src="/fis-logo.jpg"
+                src="/logo1.jpg"
                 alt="Fundamental IT Solutions logo mark"
                 width={48}
                 height={48}
@@ -47,7 +47,7 @@ const Footer = () => {
                 priority
               />
               <div>
-                <p className="font-['Pacifico'] text-xl">Fundamental IT</p>
+                <p className="font-['Heading Pro Extended'] text-xl">Fundamental IT</p>
                 <p className="text-sm tracking-[0.4em] uppercase text-slate-300">
                   Solutions
                 </p>
@@ -109,21 +109,21 @@ const Footer = () => {
                 <Mail className="w-5 h-5 text-white" />
                 <div>
                   <p className="font-semibold text-white">Email</p>
-                  <p>hello@fundamentalit.com</p>
+                  <p>joanna-admin@fundamental-it-solutions.com</p>
                 </div>
               </div>
               <div className="flex space-x-3">
                 <Phone className="w-5 h-5 text-white" />
                 <div>
                   <p className="font-semibold text-white">Phone</p>
-                  <p>+1 (555) 123-4567</p>
+                  <p>+63 9659700823</p>
                 </div>
               </div>
               <div className="flex space-x-3">
-                <MapPin className="w-5 h-5 text-white" />
+                <MapPin className="w-10 h-5  text-white" />
                 <div>
-                  <p className="font-semibold text-white">Address</p>
-                  <p>123 Innovation Drive, Silicon Valley, CA 94025</p>
+                  <p className="font-semibold text-white ">Address</p>
+                  <p>20th Drive, Upper McKinley Rd, Business Park, Taguig, Metro Manila</p>
                 </div>
               </div>
             </div>
@@ -131,7 +131,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-slate-400 space-y-4 md:space-y-0">
-          <p>© {new Date().getFullYear()} Fundamental IT Solutions.</p>
+          <p>© {new Date().getFullYear()} Fundamental IT Solutions. All rights reserved.</p>
           <div className="flex space-x-6">
             <Link href="#" className="hover:text-white transition-colors">
               Privacy Policy

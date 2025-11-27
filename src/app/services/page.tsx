@@ -1,7 +1,9 @@
+"use client";
+
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
-import { Check, Palette, Settings2, Shield, Cloud, Server } from "lucide-react";
+import { Check, Palette, Shield, Server } from "lucide-react";
 
 const services = [
   {
@@ -55,16 +57,56 @@ const services = [
 ];
 
 const technologies = [
-  { label: "React", abbr: "R", color: "text-blue-600", bg: "bg-blue-50" },
-  { label: "Node.js", abbr: "N", color: "text-green-600", bg: "bg-green-50" },
-  { label: "Python", abbr: "Py", color: "text-yellow-500", bg: "bg-yellow-50" },
-  { label: "AWS", abbr: "AWS", color: "text-orange-500", bg: "bg-orange-50" },
-  { label: "React Native", abbr: "RN", color: "text-purple-600", bg: "bg-purple-50" },
-  { label: "PostgreSQL", abbr: "PG", color: "text-indigo-600", bg: "bg-indigo-50" },
-  { label: "Docker", abbr: "Dk", color: "text-red-500", bg: "bg-red-50" },
-  { label: "Kubernetes", abbr: "K8s", color: "text-teal-600", bg: "bg-teal-50" },
-  { label: "GraphQL", abbr: "GQL", color: "text-pink-500", bg: "bg-pink-50" },
-  { label: "TypeScript", abbr: "TS", color: "text-cyan-600", bg: "bg-cyan-50" },
+  {
+    label: "React",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    bg: "bg-blue-50",
+  },
+  {
+    label: "Node.js",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    bg: "bg-green-50",
+  },
+  {
+    label: "Python",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    bg: "bg-yellow-50",
+  },
+  {
+    label: "AWS",
+    logo: "/service-icons/aws.png",
+    bg: "bg-orange-50",
+  },
+  {
+    label: "React Native",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    bg: "bg-purple-50",
+  },
+  {
+    label: "PostgreSQL",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    bg: "bg-indigo-50",
+  },
+  {
+    label: "Docker",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    bg: "bg-red-50",
+  },
+  {
+    label: "Kubernetes",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
+    bg: "bg-teal-50",
+  },
+  {
+    label: "GraphQL",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+    bg: "bg-pink-50",
+  },
+  {
+    label: "TypeScript",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    bg: "bg-cyan-50",
+  },
 ];
 
 
@@ -122,7 +164,7 @@ function ServicesGrid() {
                 ))}
               </ul>
               <Button className="w-full justify-start font-bold bg-transparent 
-              border-2 hover:bg-transparent text-[#0D1B2A] hover:text-slate-200 mt-1">Learn More →</Button>
+              border-2 hover:bg-transparent text-[#0D1B2A]  mt-1"><span className="hover:text-slate-200">Learn More →</span></Button>
             </div>
           ))}
         </div>
@@ -141,14 +183,18 @@ function TechStack() {
           {technologies.map((tech) => (
             <div
               key={tech.label}
-              className={`${tech.bg} border border-slate-100 rounded-2xl p-6 text-center shadow-sm space-y-3`}
+              className="bento-card tech-card relative flex flex-col items-center gap-4 text-center text-[#0D1B2A] px-6 py-8"
             >
-              <div
-                className={`${tech.color} text-xl font-bold w-14 h-14 rounded-full border border-current mx-auto flex items-center justify-center`}
-              >
-                {tech.abbr}
+              <div className="mx-auto flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-[#0D1B2A]/10 bg-white shadow-inner">
+                <Image
+                  src={tech.logo}
+                  alt={`${tech.label} logo`}
+                  width={48}
+                  height={48}
+                  className="w-10 h-10 object-contain"
+                />
               </div>
-              <p className="font-semibold text-[#0D1B2A]">{tech.label}</p>
+              <p className="font-semibold text-base">{tech.label}</p>
             </div>
           ))}
         </div>

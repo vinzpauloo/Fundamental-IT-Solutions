@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
         hostname: "public.readdy.ai",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.jsdelivr.net",
+        pathname: "/**",
+      },
     ],
   },
 };
