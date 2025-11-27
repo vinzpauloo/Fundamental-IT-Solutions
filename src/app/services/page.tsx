@@ -1,17 +1,20 @@
-import { Check, Code2, Palette, Settings2, Shield, Cloud, Server } from "lucide-react";
+import Image from "next/image";
+
+import { Button } from "@/components/ui/button";
+import { Check, Palette, Settings2, Shield, Cloud, Server } from "lucide-react";
 
 const services = [
   {
     title: "Web & App Development",
-    icon: Code2,
+    icon: "/service-icons/Web-app-icon.png",
     description:
       "Custom web applications, mobile apps, and PWAs built with modern frameworks and best practices.",
     bullets: ["React & Vue.js", "iOS & Android Apps", "Progressive Web Apps"],
-    accent: "bg-blue-100 text-blue-600",
+    accent: "bg-blue-100 text-blue-600s",
   },
   {
     title: "Cloud Solutions",
-    icon: Cloud,
+    icon: "/service-icons/cloud-icon.png",
     description:
       "Cloud migration, infrastructure setup, and managed services to optimise performance and cost.",
     bullets: ["AWS & Azure", "DevOps & CI/CD", "Cloud Architecture"],
@@ -35,7 +38,7 @@ const services = [
   },
   {
     title: "IT Consulting",
-    icon: Settings2,
+    icon: "/service-icons/consulting-icon.png",
     description:
       "Strategic consulting to help you make informed decisions and optimise infrastructure.",
     bullets: ["Digital Strategy", "Technology Assessment", "Process Optimisation"],
@@ -56,7 +59,7 @@ const technologies = [
   { label: "Node.js", abbr: "N", color: "text-green-600", bg: "bg-green-50" },
   { label: "Python", abbr: "Py", color: "text-yellow-500", bg: "bg-yellow-50" },
   { label: "AWS", abbr: "AWS", color: "text-orange-500", bg: "bg-orange-50" },
-  { label: "Flutter", abbr: "Fl", color: "text-purple-600", bg: "bg-purple-50" },
+  { label: "React Native", abbr: "RN", color: "text-purple-600", bg: "bg-purple-50" },
   { label: "PostgreSQL", abbr: "PG", color: "text-indigo-600", bg: "bg-indigo-50" },
   { label: "Docker", abbr: "Dk", color: "text-red-500", bg: "bg-red-50" },
   { label: "Kubernetes", abbr: "K8s", color: "text-teal-600", bg: "bg-teal-50" },
@@ -80,13 +83,9 @@ function ServicesHero() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-5xl mx-auto px-6 text-center space-y-6">
-        <p className="text-sm uppercase tracking-[0.4em] text-[#0D1B2A]">Services</p>
-        <h1 className="text-4xl md:text-5xl font-black text-[#0D1B2A]">
-          Comprehensive IT solutions tailored to your business.
-        </h1>
-        <p className="text-lg text-slate-600">
-          From strategy through delivery and support, we build scalable systems that accelerate
-          digital transformation.
+        <h1 className="text-5xl font-bold uppercase tracking-[0.4em] text-[#0D1B2A]"> Our Services</h1>
+        <p className="text-xl md:text-xl text-slate-600">
+          Comprehensive IT solutions tailored to meet your business needs and drive digital transformation across all industries.
         </p>
       </div>
     </section>
@@ -101,7 +100,17 @@ function ServicesGrid() {
           {services.map((service) => (
             <div key={service.title} className="p-8 rounded-3xl border border-slate-100 shadow-xl">
               <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${service.accent}`}>
-                <service.icon className="w-6 h-6" />
+                {typeof service.icon === "string" ? (
+                  <Image
+                    src={service.icon}
+                    alt={`${service.title} icon`}
+                    width={24}
+                    height={24}
+                    className="w-6 h-6 object-contain"
+                  />
+                ) : (
+                  <service.icon className="w-6 h-6" />
+                )}
               </div>
               <h3 className="text-2xl font-semibold text-[#0D1B2A]">{service.title}</h3>
               <p className="text-slate-600 mt-3 mb-6">{service.description}</p>
@@ -112,6 +121,8 @@ function ServicesGrid() {
                   </li>
                 ))}
               </ul>
+              <Button className="w-full justify-start font-bold bg-transparent 
+              border-2 hover:bg-transparent text-[#0D1B2A] hover:text-slate-200 mt-1">Learn More →</Button>
             </div>
           ))}
         </div>
