@@ -200,7 +200,8 @@ function TransformingTomorrow() {
           Transforming Tomorrow
           </h2>
           <p className="text-base md:text-xl lg:text-xl text-slate-600 max-w-3xl mx-auto">
-          We don't just build software – we architect digital ecosystems that evolve, adapt, and thrive in an ever-changing technological landscape.
+          We don&apos;t just build software – we architect digital ecosystems that evolve, adapt, and thrive in an ever-changing technological landscape.
+
           </p>
         </div>
 
