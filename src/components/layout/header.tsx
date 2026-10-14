@@ -8,7 +8,7 @@ const navLinkClassName =
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-paper/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur-md">
       <Container className="flex h-18 items-center justify-between gap-6">
         <Logo href="/" className="min-h-11" />
         <nav aria-label="Main navigation" className="hidden lg:block">
