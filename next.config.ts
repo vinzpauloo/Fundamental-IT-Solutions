@@ -11,9 +11,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   async redirects() {
     return Object.entries(legacyServiceRedirects).map(
-      ([legacySlug, capabilitySlug]) => ({
+      ([legacySlug, destination]) => ({
         source: `/services/${legacySlug}`,
-        destination: `/services/${capabilitySlug}`,
+        destination,
         permanent: true,
       }),
     );

@@ -62,8 +62,8 @@ export function HomeHero() {
           <div className="flex flex-col gap-8 lg:col-span-4">
             <p className="text-lg leading-relaxed text-forest-200 md:text-xl">
               We build web platforms, mobile apps, backend services, cloud
-              infrastructure and AI automation for clients across Asia and
-              beyond. Then we stay on to monitor what we ship, respond to
+              infrastructure and AI automation for businesses in the
+              Philippines and abroad. Then we stay on to monitor what we ship, respond to
               incidents and release changes.
             </p>
             <div className="flex flex-wrap gap-3">

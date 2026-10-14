@@ -21,7 +21,7 @@ const practices = [
   },
   {
     title: "Monitoring and tracing",
-    body: "Errors and traces go to Sentry and OpenTelemetry, so we can see what failed and where.",
+    body: "Errors and traces go to Sentry, and uptime checks run in Better Stack, so we can see what failed and where.",
   },
   {
     title: "Documented runbooks",

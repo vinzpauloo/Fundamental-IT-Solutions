@@ -22,7 +22,7 @@ const proofProjects = [
     href: "/work/nomad",
     name: "NOMAD Beauty & Skin Care",
     detail:
-      "A website in English, Chinese and Malay for a skin care studio in Kuala Lumpur.",
+      "A website in English, Simplified Chinese and Malay for a skin care studio in Kuala Lumpur.",
   },
 ];
 
@@ -71,7 +71,7 @@ export function OurStory() {
               </ul>
             </div>
             <p className="text-lg leading-relaxed text-muted">
-              We also work with clients remotely across Asia and beyond.
+              We also work with clients remotely, including a studio in Kuala Lumpur.
             </p>
             <div className="flex flex-col gap-3">
               <p className="font-mono text-xs font-medium tracking-[0.14em] text-forest-700 uppercase">

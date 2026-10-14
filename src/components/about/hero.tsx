@@ -2,7 +2,7 @@ import { Container, Eyebrow, Section, SerifAccent } from "@/components/ui";
 
 const facts = [
   { label: "Based in", value: "Taguig, Metro Manila" },
-  { label: "Clients", value: "Remote, across Asia and beyond" },
+  { label: "Clients", value: "Philippines and Malaysia" },
   { label: "Stays on", value: "After launch" },
 ];
 

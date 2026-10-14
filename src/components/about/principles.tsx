@@ -18,8 +18,8 @@ const principles = [
     body: "Runbooks, release steps and post-incident reviews are written and shared with your team. A process that only one person knows is not finished.",
   },
   {
-    title: "Clients own their code and infrastructure.",
-    body: "Repositories, cloud accounts and domains belong to you, not to us. We document how they work, so your team can understand and run them.",
+    title: "No black boxes.",
+    body: "Code, infrastructure and release steps live in version control with written docs, so anyone on your team can see how a system is built, deployed and run.",
   },
 ];
 

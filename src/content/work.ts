@@ -59,24 +59,24 @@ export const caseStudies: readonly CaseStudy[] = [
       },
     ],
     summary:
-      "We built the driver app, the public website and the operator console for an EV charging operator, along with the back end that talks to its chargers.",
+      "We built VoltHub's driver app, public website and operator console, along with the back end that talks to its chargers.",
     challenge:
       "EV charging only works when drivers can find a station, start a charge and pay from their phone, and operators can see every charger in one place. Behind that, each charger has to report to a back end and take commands from it. VoltHub needed all of these to work as one system.",
     built: [
       {
         title: "Driver app",
         detail:
-          "Drivers find stations on a map, scan the QR code on a charger to start a session, and follow power and time as the car charges. They can pay with local e-wallets such as GCash and Maya, and receipts and charging history sit in their account. Built with Expo for iOS and Android.",
+          "Drivers find stations on a map, scan the QR code on a charger to start a session, and follow power and time as the car charges. They pay per session or from a prepaid VoltHub wallet through StarPay QR, using GCash, Maya or the StarPay app. Charging history sits in their account, and a receipt arrives by email. Built with Expo for iOS and Android.",
       },
       {
         title: "Charger gateway",
         detail:
-          "A back-end service keeps a connection open to each charger over OCPP 1.6, the open standard chargers use. It receives boot, heartbeat, status, meter and transaction messages, and it sends remote start and stop commands.",
+          "A back-end service keeps a connection open to each charger over OCPP 1.6, the open standard chargers use. It receives boot, heartbeat, status, meter and transaction messages, and it sends remote start and stop, reset, unlock, configuration and firmware update commands.",
       },
       {
         title: "Operator console",
         detail:
-          "A Next.js admin for chargers and stations. Each charger has a QR code that drivers scan to start a session at that charger.",
+          "A Next.js admin for chargers, stations, sessions, payments, payouts and revenue. Each charger has a QR code that drivers scan to start a session at that charger.",
       },
       {
         title: "Public website",
@@ -86,7 +86,7 @@ export const caseStudies: readonly CaseStudy[] = [
       {
         title: "Back end",
         detail:
-          "NestJS services with Prisma and PostgreSQL, deployed on Google Cloud Run.",
+          "A NestJS app with Prisma, PostgreSQL on Neon and Redis on Upstash, deployed on Google Cloud Run. The infrastructure is described in Pulumi. Rules run in the background: a charge stops at the driver's limit, slow charging is flagged, idle fees are applied and unpaid QR codes expire.",
       },
     ],
     platforms: [
@@ -104,11 +104,13 @@ export const caseStudies: readonly CaseStudy[] = [
       "PostgreSQL",
       "Redis",
       "Google Cloud Run",
+      "Pulumi",
+      "Sentry",
     ],
     highlights: [
       "Drivers scan a QR code at the station, then follow the charge live in the app.",
       "Chargers connect over OCPP, the open standard EV chargers use to talk to a back end.",
-      "Drivers get notifications when a charge starts, finishes or is interrupted.",
+      "Drivers get a notification when a charge finishes, stops at their limit or slows down, and a receipt by email.",
       "The public site includes solar and EV charging ROI calculators.",
     ],
     status: "Live",
@@ -159,27 +161,32 @@ export const caseStudies: readonly CaseStudy[] = [
       {
         title: "Consumer app",
         detail:
-          "Customers browse deals, see them on a map and claim one, which stays in their wallet for 24 hours. They show the QR code at the store to redeem it. A paid subscription gives access to subscriber-only deals. Built with Expo for iOS and Android.",
+          "Customers browse deals, see them on a map and claim one, which stays in their Coupons tab for 24 hours, with an optional Apple Wallet or Google Wallet pass. They show a QR code at the store to redeem it, and the code refreshes every few minutes. A paid membership unlocks member-only deals. Built with Expo for iOS, Android and Huawei AppGallery.",
       },
       {
         title: "Consumer website",
         detail:
-          "Deals by city and category, articles, and pages in English, Japanese, Korean and Tagalog, with structured data for search engines.",
+          "Deals by city and category, articles and guides, in English, Japanese, Korean, Tagalog and Cebuano, with structured data for search engines.",
       },
       {
         title: "Merchant portal",
         detail:
-          "B-Merchant lets a business sign up for free, add its branches, publish coupons and deals, run ads on B-ticket and accept customer payments. Redemption and sales reports sit in the same portal.",
+          "B-Merchant lets a business sign up for free, add its branches, publish coupons and buy ads on B-ticket. Redemption history and analytics sit in the same portal.",
       },
       {
-        title: "Merchant and rider apps",
+        title: "Merchant app",
         detail:
-          "Expo apps for merchant staff and for riders, built on the same mobile stack as the consumer app.",
+          "An Expo app for merchants, with a manager view for offers, branches and insights, and a scanner view that counter staff use to redeem coupons.",
+      },
+      {
+        title: "AI tools for merchants",
+        detail:
+          "A merchant takes a photo of a menu, and OpenAI vision turns it into draft products the merchant reviews before publishing. A merchant assistant answers questions and acts through the portal's own tools, listings can be rewritten and translated automatically, and new merchants can be onboarded through a Telegram bot.",
       },
       {
         title: "Admin console and APIs",
         detail:
-          "An admin console with role-based access for staff and a review step for new merchants. The APIs use NestJS and Drizzle over PostgreSQL, with payment integrations and error monitoring in Sentry.",
+          "An admin console with role-based access for staff and an approval queue for new merchants that requires multi-factor sign-in. The APIs use NestJS and Drizzle over PostgreSQL on Neon. Payments run through StarPay QR Ph and Apple, Google and Huawei in-app purchases, with error monitoring in Sentry.",
       },
     ],
     platforms: [
@@ -187,25 +194,25 @@ export const caseStudies: readonly CaseStudy[] = [
       "Consumer website",
       "Merchant portal",
       "Admin console",
-      "Merchant and rider apps",
+      "Merchant app",
     ],
     stack: [
       "Expo",
       "React Native",
-      "React",
-      "Vite",
+      "React Router",
       "NestJS",
       "Drizzle",
       "PostgreSQL",
+      "OpenAI",
       "Vercel",
       "Google Cloud Run",
       "Sentry",
     ],
     highlights: [
       "Customers claim a deal in the app and show a QR code at the store to redeem it.",
-      "Merchants manage coupons, branches, ads and redemption reports from one portal.",
-      "The consumer website is available in English, Japanese, Korean and Tagalog.",
-      "A paid subscription gives access to deals that only subscribers can claim.",
+      "Merchants turn a photo of their menu into draft listings with AI, then review them before publishing.",
+      "The consumer website is available in English, Japanese, Korean, Tagalog and Cebuano.",
+      "A paid membership unlocks deals that only members can claim.",
     ],
     status: "Live",
     images: {
@@ -228,41 +235,41 @@ export const caseStudies: readonly CaseStudy[] = [
     location: "Kuala Lumpur, Malaysia",
     url: "https://nomadbeautyskin.com/en",
     summary:
-      "We built a website in English, Chinese and Malay for a skin care studio in Kuala Lumpur, with its services and rates, and a booking path that starts on WhatsApp.",
+      "We built a website in English, Simplified Chinese and Malay for a skin care studio in Kuala Lumpur, with its services, published rates and a booking path that starts on WhatsApp.",
     challenge:
       "The studio needed a website that explains each service in plain language, shows what a first visit involves and makes it easy to start a conversation before booking. The team also needed to keep the content up to date without a developer for every change.",
     built: [
       {
         title: "Three languages",
         detail:
-          "Full pages in English, Chinese and Malay, each with its own address and a language switch in the header.",
+          "Full pages in English, Simplified Chinese and Malay, each at its own address (/en, /zh, /ms), with a language switch in the footer and a sitemap for each language.",
       },
       {
         title: "Services and rates",
         detail:
-          "Service pages for facials, peels and resurfacing, light and device sessions, massage, brows and lashes, and hair removal, plus a menu of rates.",
+          "Service pages for facials, peels and resurfacing, light and device sessions, lymphatic body-contour massage, brows and lashes, and hair removal, with published rates for Korean skin management and hair removal. Each service carries structured data for search engines.",
       },
       {
         title: "Consultation path",
         detail:
-          "A consult page asks a few questions before a first visit. WhatsApp links sit in the header and on the main pages, and each prefilled message carries a tag that shows where it started on the site.",
+          "A four-step consult questionnaire suggests treatments and saves each enquiry in the CMS, with an email alert to the team. WhatsApp links sit in the header and on the main pages, and each prefilled message carries a tag that shows where it started on the site.",
       },
       {
         title: "Content management",
         detail:
-          "Pages and articles are managed in Payload CMS, which gives editors a screen for changes instead of a code change.",
+          "Pages and articles are managed in Payload CMS, which gives editors a screen for changes instead of a code change. An MCP server lets AI assistants edit pages, posts and media after the editor signs in.",
       },
       {
         title: "Hosting",
         detail:
-          "Built with Next.js and hosted on Vercel, with PostgreSQL for the data.",
+          "Built with Next.js and hosted on Vercel, with PostgreSQL on Neon for the data and Vercel Blob for images. Analytics load only after a visitor agrees.",
       },
     ],
-    platforms: ["Website in English, Chinese and Malay", "Content management (Payload CMS)"],
-    stack: ["Next.js 16", "Payload CMS 3", "PostgreSQL", "Vercel"],
+    platforms: ["Website in English, Simplified Chinese and Malay", "Content management (Payload CMS)"],
+    stack: ["Next.js 16", "Payload CMS 3", "PostgreSQL", "Neon", "Vercel", "Resend"],
     highlights: [
-      "The site runs in English, Chinese and Malay, with each language on its own address.",
-      "Every visit starts with a consultation, and the services pages say so.",
+      "The site runs in English, Simplified Chinese and Malay, with each language on its own address.",
+      "Service pages invite visitors to begin with a skin consult.",
       "Each WhatsApp message carries a tag that shows where the enquiry started.",
       "Booking starts with a conversation, so visitors can ask their questions first.",
     ],

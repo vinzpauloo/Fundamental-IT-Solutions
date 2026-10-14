@@ -38,7 +38,7 @@ export function ContactDetails() {
           ))}
         </address>
         <p className="text-muted">
-          We work with clients remotely across Asia and beyond.
+          We also work remotely with clients outside the Philippines.
         </p>
       </div>
 
