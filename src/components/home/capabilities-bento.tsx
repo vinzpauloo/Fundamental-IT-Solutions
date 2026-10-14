@@ -57,7 +57,7 @@ function WebPlatformsShowcase() {
               src={study.images.desktop.src}
               alt=""
               fill
-              sizes="(min-width: 1240px) 490px, 45vw"
+              sizes="(min-width: 1240px) 490px, (min-width: 1024px) 45vw, 60vw"
               className="object-cover object-top"
             />
           </BrowserFrame>
@@ -72,12 +72,15 @@ const tilePreviews: Partial<Record<CapabilitySlug, ReactNode>> = {
 };
 
 const tileLayouts: Record<CapabilitySlug, TileLayout> = {
-  "web-platforms": { span: "md:col-span-4 md:row-span-2", tone: "dark" },
-  "mobile-apps": { span: "md:col-span-2", tone: "light" },
-  "backend-integrations": { span: "md:col-span-2", tone: "light" },
-  "cloud-platforms": { span: "md:col-span-2", tone: "light" },
-  "operations-reliability": { span: "md:col-span-2", tone: "light" },
-  "ai-automation": { span: "md:col-span-2", tone: "light" },
+  "web-platforms": {
+    span: "md:col-span-2 lg:col-span-4 lg:row-span-2",
+    tone: "dark",
+  },
+  "mobile-apps": { span: "lg:col-span-2", tone: "light" },
+  "backend-integrations": { span: "lg:col-span-2", tone: "light" },
+  "cloud-platforms": { span: "lg:col-span-2", tone: "light" },
+  "operations-reliability": { span: "lg:col-span-2", tone: "light" },
+  "ai-automation": { span: "md:col-span-2 lg:col-span-2", tone: "light" },
 };
 
 function CapabilityTile({
@@ -171,7 +174,7 @@ export function CapabilitiesBento() {
             description="Each area has a page of its own, with what we deliver and the stack we use."
           />
         </Reveal>
-        <ul className="mt-16 grid gap-4 md:grid-cols-6 md:gap-5">
+        <ul className="mt-16 grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-6">
           {capabilities.map((capability) => {
             const layout = tileLayouts[capability.slug];
 
