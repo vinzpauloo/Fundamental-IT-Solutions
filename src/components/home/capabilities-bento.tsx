@@ -1,6 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import {
   ArrowIcon,
+  BrowserFrame,
   capabilityIcons,
   Container,
   Reveal,
@@ -13,13 +16,57 @@ import {
   type Capability,
   type CapabilitySlug,
 } from "@/content/services";
-import { cn } from "@/lib/utils";
+import { caseStudies, type CaseSlug } from "@/content/work";
+import { cn, siteHost } from "@/lib/utils";
 
 type TileTone = "light" | "dark";
 
 type TileLayout = {
   span: string;
   tone: TileTone;
+};
+
+const webPlatformShowcase: readonly CaseSlug[] = ["nomad", "b-ticket"];
+
+const showcaseFramePlacement = [
+  "top-0 left-0",
+  "right-0 bottom-0 transition-transform duration-300 ease-out group-hover:-translate-y-1.5 motion-reduce:transition-none",
+];
+
+function WebPlatformsShowcase() {
+  const studies = caseStudies.filter((study) =>
+    webPlatformShowcase.includes(study.slug),
+  );
+
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none relative hidden min-h-80 flex-1 md:block"
+    >
+      {studies.map((study, index) => (
+        <BrowserFrame
+          key={study.slug}
+          address={siteHost(study.url)}
+          className={cn(
+            "absolute w-[68%] ring-paper/10",
+            showcaseFramePlacement[index],
+          )}
+        >
+          <Image
+            src={study.images.desktop.src}
+            alt=""
+            fill
+            sizes="(min-width: 1240px) 490px, 45vw"
+            className="object-cover object-top"
+          />
+        </BrowserFrame>
+      ))}
+    </div>
+  );
+}
+
+const tilePreviews: Partial<Record<CapabilitySlug, ReactNode>> = {
+  "web-platforms": <WebPlatformsShowcase />,
 };
 
 const tileLayouts: Record<CapabilitySlug, TileLayout> = {
@@ -34,9 +81,11 @@ const tileLayouts: Record<CapabilitySlug, TileLayout> = {
 function CapabilityTile({
   capability,
   tone,
+  preview,
 }: {
   capability: Capability;
   tone: TileTone;
+  preview?: ReactNode;
 }) {
   const Icon = capabilityIcons[capability.icon];
   const isDark = tone === "dark";
@@ -79,6 +128,7 @@ function CapabilityTile({
           {capability.short}
         </p>
       </div>
+      {preview}
       <ul
         className={cn(
           "mt-auto flex flex-col gap-3 border-t pt-6 text-sm leading-relaxed",
@@ -125,7 +175,11 @@ export function CapabilitiesBento() {
 
             return (
               <Reveal as="li" key={capability.slug} className={layout.span}>
-                <CapabilityTile capability={capability} tone={layout.tone} />
+                <CapabilityTile
+                  capability={capability}
+                  tone={layout.tone}
+                  preview={tilePreviews[capability.slug]}
+                />
               </Reveal>
             );
           })}

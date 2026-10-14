@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 
 export function ContactDetails() {
   const { streetLines, locality, postalCode, region, country } = site.address;
+  const [emailLocalPart, emailDomain] = site.email.split("@");
   const addressLines = [
     ...streetLines,
     `${locality} ${postalCode}`,
@@ -16,9 +17,11 @@ export function ContactDetails() {
         <Eyebrow>Email</Eyebrow>
         <a
           href={`mailto:${site.email}`}
-          className="block text-xl font-medium break-words text-ink underline decoration-gold-500 decoration-2 underline-offset-8 transition-colors hover:decoration-forest-600 md:text-2xl"
+          className="block text-xl font-medium text-ink underline decoration-gold-500 decoration-2 underline-offset-8 transition-colors hover:decoration-forest-600 md:text-2xl"
         >
-          {site.email}
+          {emailLocalPart}@
+          <wbr />
+          <span className="whitespace-nowrap">{emailDomain}</span>
         </a>
         <p className="text-muted">
           Write to us directly if the form does not suit you.

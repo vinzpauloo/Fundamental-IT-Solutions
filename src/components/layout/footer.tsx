@@ -13,7 +13,7 @@ const companyLinks = [
 ];
 
 const footerLinkClassName =
-  "inline-flex min-h-11 items-center text-[0.9375rem] text-forest-200 transition-colors duration-200 hover:text-paper focus-visible:outline-gold-300";
+  "inline-flex min-h-11 items-center py-2.5 text-[0.9375rem] leading-snug text-forest-200 transition-colors duration-200 hover:text-paper focus-visible:outline-gold-300";
 
 function FooterColumn({
   title,
