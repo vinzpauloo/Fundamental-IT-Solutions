@@ -43,7 +43,7 @@ A feature imports from `ui`, `content` and `lib`. It does not import from anothe
 - **`site`** (`src/lib/site.ts`): name, short and former names, URL, email, description, tagline, postal address, navigation and the main call to action.
 - **`CaseStudy` and `caseStudies`** (`src/content/work.ts`): slug, client, sector, summary, challenge, what we built, platforms, stack, highlights, status, two screenshots with alt text and an accent colour. Helpers: `getCaseStudy(slug)` and `caseStudySlugs()`.
 - **`Capability` and `capabilities`** (`src/content/services.ts`): slug, title, short and full summary, icon name, deliverables, stack, related case studies, FAQ. Helpers: `getCapability(slug)` and `capabilitySlugs()`.
-- **`legacyServiceRedirects`** (`src/content/services.ts`): old service slugs mapped to current capability slugs. `next.config.ts` turns each entry into a permanent redirect.
+- **`legacyServiceRedirects`** (`src/content/services.ts`): old service slugs mapped to the `/services` path that replaces them, either a capability page or the services index when no single capability does. `next.config.ts` turns each entry into a permanent redirect.
 
 A capability lists the case studies it relates to through `CaseSlug`, so renaming a case study slug is a type error until every reference is updated.
 
@@ -64,12 +64,17 @@ sequenceDiagram
     participant Visitor
     participant Form as Contact form
     participant Action as Server action
+    participant Turnstile as Cloudflare Turnstile
     participant Resend
 
     Visitor->>Form: Submit
     Form->>Action: Form data
     Action->>Action: Validate fields and honeypot
-    alt Resend configured
+    opt Turnstile configured
+        Action->>Turnstile: Confirm the check token
+        Turnstile-->>Action: Passed or failed
+    end
+    alt Resend configured and check passed
         Action->>Resend: Send email
         Resend-->>Action: Accepted or error
     end
@@ -79,6 +84,7 @@ sequenceDiagram
 
 - Validation runs on the server. Field errors come back to the form, and the visitor's typed values stay in place.
 - A hidden honeypot field and a minimum time on the form catch most bots.
+- When the Turnstile keys are set, the form shows a Cloudflare Turnstile check and the server confirms its token with Cloudflare before sending. The token must be for the `contact` action. A missing, failed or unconfirmed check sends nothing and offers the email fallback. Each response from the server renders a fresh check, because a token works only once.
 - Success is reported only when Resend accepts the message. Otherwise the visitor sees that the message was not sent and gets a prefilled email to the company address.
 - Nothing is stored. A message exists only in the delivery email.
 
