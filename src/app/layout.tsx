@@ -1,121 +1,93 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import type { ReactNode } from "react";
 import { Analytics } from "@/components/analytics";
-import { MotionConfigProvider } from "@/components/motion-config-provider";
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
 import {
   OrganizationJsonLd,
   WebSiteJsonLd,
-} from "@/components/structured-data";
-import { SITE_CONFIG } from "@/lib/constants";
+} from "@/components/seo/structured-data";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
   subsets: ["latin"],
+  variable: "--font-geist-sans",
   display: "swap",
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  variable: "--font-geist-mono",
   display: "swap",
 });
 
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+  display: "swap",
+});
+
+const defaultTitle =
+  "Fundamental IT Solutions — Product engineering for web, mobile and cloud";
+
 export const viewport: Viewport = {
-  themeColor: "#1A5276",
-  width: "device-width",
-  initialScale: 1,
+  themeColor: "#03120B",
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_CONFIG.url),
+  metadataBase: new URL(site.url),
   title: {
-    default: "Fundamental IT Solutions — Enterprise IT Consulting & AI Services",
-    template: "%s | Fundamental IT Solutions",
+    default: defaultTitle,
+    template: "%s · Fundamental IT Solutions",
   },
-  description: SITE_CONFIG.description,
-  keywords: [
-    "IT consulting",
-    "AI solutions",
-    "data analytics",
-    "software development",
-    "cloud services",
-    "cybersecurity",
-    "digital transformation",
-    "DevOps",
-    "enterprise technology",
-    "digital innovation",
-  ],
-  authors: [{ name: "Fundamental IT Solutions" }],
-  creator: "Fundamental IT Solutions",
+  description: site.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Fundamental IT Solutions",
-    description: SITE_CONFIG.description,
-    url: SITE_CONFIG.url,
-    siteName: SITE_CONFIG.name,
-    locale: "en_US",
+    title: defaultTitle,
+    description: site.description,
+    siteName: site.name,
+    locale: "en_PH",
     type: "website",
-    images: [
-      {
-        url: "/fund-logo-1.png",
-        width: 1200,
-        height: 630,
-        alt: "Fundamental IT Solutions",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fundamental IT Solutions",
-    description: SITE_CONFIG.description,
-    images: ["/fund-logo-1.png"],
+    title: defaultTitle,
+    description: site.description,
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.png", type: "image/png", sizes: "192x192" },
-    ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
   },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full`}
+      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
     >
-      <body className="min-h-full flex flex-col antialiased">
+      <body className="flex min-h-dvh flex-col antialiased">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-primary-900 focus:shadow-lg"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:rounded-full focus:bg-surface focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-ink focus:shadow-soft"
         >
           Skip to main content
         </a>
-        <MotionConfigProvider>
-          <OrganizationJsonLd />
-          <WebSiteJsonLd />
-          <Header />
-          <div className="flex flex-1 flex-col pt-18 lg:pt-20">{children}</div>
-          <Footer />
-        </MotionConfigProvider>
+        <Header />
+        <div className="flex flex-1 flex-col">{children}</div>
+        <Footer />
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
         <Analytics />
       </body>
     </html>

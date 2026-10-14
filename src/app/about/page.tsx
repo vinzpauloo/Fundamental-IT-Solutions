@@ -1,22 +1,31 @@
-import type { Metadata } from "next";
-import { AboutHero } from "@/components/sections/about-hero";
-import { Mission } from "@/components/sections/mission";
-import { Team } from "@/components/sections/team";
-import { CTA } from "@/components/sections/cta";
+import {
+  AboutHero,
+  ClosingCta,
+  EngagementTimeline,
+  Leadership,
+  OurStory,
+  Principles,
+  TechStack,
+} from "@/components/about";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "About Us",
+export const metadata = pageMetadata({
+  title: "About",
   description:
-    "Learn about Fundamental IT Solutions — our mission, values, and the team driving innovation in enterprise technology.",
-};
+    "We design, build and run web platforms, mobile apps, backend services and cloud infrastructure from Taguig, Metro Manila, and we stay on after launch.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
     <main id="main-content" className="flex flex-1 flex-col">
       <AboutHero />
-      <Mission />
-      <Team />
-      <CTA />
+      <OurStory />
+      <Principles />
+      <EngagementTimeline />
+      <Leadership />
+      <TechStack />
+      <ClosingCta />
     </main>
   );
 }

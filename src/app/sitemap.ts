@@ -1,41 +1,21 @@
 import type { MetadataRoute } from "next";
-import { SITE_CONFIG } from "@/lib/constants";
-import { getAllServices } from "@/lib/services-data";
+import { capabilitySlugs } from "@/content/services";
+import { caseStudySlugs } from "@/content/work";
+import { site } from "@/lib/site";
+
+const lastModified = "2026-10-14";
+
+const staticPaths = ["/", "/work", "/services", "/about", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = SITE_CONFIG.url;
-  const allServices = getAllServices();
-
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    ...allServices.map((service) => ({
-      url: `${baseUrl}/services/${service.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    })),
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+  const paths = [
+    ...staticPaths,
+    ...caseStudySlugs().map((slug) => `/work/${slug}`),
+    ...capabilitySlugs().map((slug) => `/services/${slug}`),
   ];
+
+  return paths.map((path) => ({
+    url: new URL(path, site.url).toString(),
+    lastModified,
+  }));
 }

@@ -1,26 +1,34 @@
-"use client";
+import type { ComponentPropsWithoutRef } from "react";
+import { ArrowIcon } from "./arrow-icon";
+import {
+  buttonStyles,
+  type ButtonSize,
+  type ButtonVariant,
+} from "./button-styles";
 
-import { forwardRef } from "react";
-import { buttonStyles } from "./button-styles";
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "ghost";
-  size?: "sm" | "md" | "lg";
+export interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  arrow?: boolean;
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "primary", size = "md", ...props }, ref) => {
-    return (
-      <button
-        ref={ref}
-        className={buttonStyles({ variant, size, className })}
-        {...props}
-      />
-    );
-  },
-);
-
-Button.displayName = "Button";
-
-export { Button, buttonStyles };
-export type { ButtonProps };
+export function Button({
+  variant = "primary",
+  size = "md",
+  arrow = false,
+  type = "button",
+  className,
+  children,
+  ...props
+}: ButtonProps) {
+  return (
+    <button
+      type={type}
+      className={buttonStyles({ variant, size, className })}
+      {...props}
+    >
+      {children}
+      {arrow ? <ArrowIcon /> : null}
+    </button>
+  );
+}

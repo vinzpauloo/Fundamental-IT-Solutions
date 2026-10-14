@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { legacyServiceRedirects } from "./src/content/services";
 
 const nextConfig: NextConfig = {
   images: {
@@ -8,6 +9,15 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  async redirects() {
+    return Object.entries(legacyServiceRedirects).map(
+      ([legacySlug, capabilitySlug]) => ({
+        source: `/services/${legacySlug}`,
+        destination: `/services/${capabilitySlug}`,
+        permanent: true,
+      }),
+    );
+  },
 };
 
 export default nextConfig;

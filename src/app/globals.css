@@ -1,107 +1,198 @@
 @import "tailwindcss";
 
-/* ============================================
-   Design Token System — Fundamental IT Solutions
-   Primary Brand: #1A5276 (deep teal/navy)
-   ============================================ */
+@theme static {
+  --color-ink: #0A1410;
+  --color-paper: #F7F5EF;
+  --color-surface: #FFFFFF;
+  --color-muted: #56635C;
+  --color-line: rgb(10 20 16 / 0.1);
 
-:root {
-  /* --- Semantic Colors --- */
-  --background: #ffffff;
-  --foreground: var(--color-neutral-900);
-  --muted: var(--color-neutral-100);
-  --muted-foreground: var(--color-neutral-500);
-  --border: var(--color-neutral-200);
-  --ring: var(--color-primary-500);
-  --surface: #ffffff;
-  --surface-elevated: #ffffff;
+  --color-forest-950: #03120B;
+  --color-forest-900: #06200F;
+  --color-forest-800: #0A3018;
+  --color-forest-700: #0E4A25;
+  --color-forest-600: #136634;
+  --color-forest-500: #1A8443;
+  --color-forest-400: #3FA35A;
+  --color-forest-300: #7CC98E;
+  --color-forest-200: #B9E3C3;
+  --color-forest-100: #E3F4E7;
 
-  /* --- Transitions --- */
-  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --color-gold-600: #A8811F;
+  --color-gold-500: #C99A2E;
+  --color-gold-400: #DDB54E;
+  --color-gold-300: #ECD28C;
+  --color-gold-100: #FAF1D6;
 }
 
-/* ---- Tailwind v4 Theme Registration ---- */
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-serif: var(--font-instrument-serif), "Iowan Old Style", Georgia, serif;
+}
+
 @theme {
-  /* --- Primary Palette (deep teal/navy) --- */
-  --color-primary-50: #e8f0f5;
-  --color-primary-100: #c5d9e5;
-  --color-primary-200: #9fbfd3;
-  --color-primary-300: #7aa5c0;
-  --color-primary-400: #5e91b2;
-  --color-primary-500: #4380a5;
-  --color-primary-600: #336d93;
-  --color-primary-700: #1a5276;
-  --color-primary-800: #123b55;
-  --color-primary-900: #0b2639;
-  --color-primary-950: #06151f;
+  --container-page: 77.5rem;
 
-  /* --- Accent (green) --- */
-  --color-accent-400: #2ecc71;
-  --color-accent-500: #27ae60;
-  --color-accent-600: #1e8449;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 
-  /* --- Neutral Palette (slate-based) --- */
-  --color-neutral-50: #f8fafc;
-  --color-neutral-100: #f1f5f9;
-  --color-neutral-200: #e2e8f0;
-  --color-neutral-300: #cbd5e1;
-  --color-neutral-400: #94a3b8;
-  --color-neutral-500: #64748b;
-  --color-neutral-600: #475569;
-  --color-neutral-700: #334155;
-  --color-neutral-800: #1e293b;
-  --color-neutral-900: #0f172a;
-  --color-neutral-950: #020617;
+  --shadow-soft: 0 1px 2px rgb(10 20 16 / 0.05), 0 8px 24px -12px rgb(10 20 16 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(10 20 16 / 0.06), 0 32px 64px -28px rgb(10 20 16 / 0.35);
+  --shadow-glow: 0 0 0 1px rgb(201 154 46 / 0.3), 0 0 72px -12px rgb(201 154 46 / 0.45);
 
-  /* --- Semantic Colors --- */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-border: var(--border);
-  --color-ring: var(--ring);
-  --color-surface: var(--surface);
-  --color-surface-elevated: var(--surface-elevated);
+  --text-display-2xl: clamp(3.25rem, 2.4rem + 4.2vw, 6.5rem);
+  --text-display-2xl--line-height: 0.98;
+  --text-display-2xl--letter-spacing: -0.04em;
+  --text-display-2xl--font-weight: 500;
 
-  /* --- Typography --- */
-  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --text-display-xl: clamp(2.75rem, 2.1rem + 2.8vw, 4.75rem);
+  --text-display-xl--line-height: 1;
+  --text-display-xl--letter-spacing: -0.035em;
+  --text-display-xl--font-weight: 500;
 
-  /* --- Border Radius --- */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-full: 9999px;
+  --text-display-lg: clamp(2.125rem, 1.7rem + 1.8vw, 3.25rem);
+  --text-display-lg--line-height: 1.04;
+  --text-display-lg--letter-spacing: -0.03em;
+  --text-display-lg--font-weight: 500;
+
+  --text-display-md: clamp(1.625rem, 1.4rem + 0.9vw, 2.25rem);
+  --text-display-md--line-height: 1.12;
+  --text-display-md--letter-spacing: -0.03em;
+  --text-display-md--font-weight: 500;
+
+  --animate-halo: halo 2.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+
+  @keyframes halo {
+    0% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    70%,
+    100% {
+      opacity: 0;
+      transform: scale(2.6);
+    }
+  }
 }
 
-/* ---- Base Styles ---- */
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-gold-300);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-600);
+    outline-offset: 2px;
+  }
 }
 
-/* ---- Focus Styles (Accessibility) ---- */
-:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
+@utility texture-glow {
+  background-image:
+    radial-gradient(60% 55% at 88% -4%, color-mix(in srgb, var(--color-forest-500) 38%, transparent), transparent 70%),
+    radial-gradient(45% 45% at -6% 108%, color-mix(in srgb, var(--color-gold-500) 16%, transparent), transparent 70%);
 }
 
-/* ---- Selection ---- */
-::selection {
-  background-color: var(--color-primary-200);
-  color: var(--color-primary-900);
+@utility texture-circuit {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--color-forest-200) 9%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-forest-200) 9%, transparent) 1px, transparent 1px);
+  background-size: 4rem 4rem;
 }
 
-/* ---- Smooth Scroll ---- */
-html {
-  scroll-behavior: smooth;
+@utility texture-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+@utility texture-fade {
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 30%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 30%, black 20%, transparent 100%);
+}
+
+@utility mask-fade-x {
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 35%;
+    }
+
+    .reveal-delay-1 {
+      animation-range: entry 6% cover 41%;
+    }
+
+    .reveal-delay-2 {
+      animation-range: entry 12% cover 47%;
+    }
+
+    .reveal-delay-3 {
+      animation-range: entry 18% cover 53%;
+    }
+  }
+}
+
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.5rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .marquee-track {
+    animation: marquee 44s linear infinite;
+    will-change: transform;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -115,29 +206,7 @@ html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* ---- Utility Classes ---- */
-.glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.gradient-brand {
-  background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-500) 50%, var(--color-accent-500) 100%);
-}
-
-.gradient-subtle {
-  background: linear-gradient(180deg, var(--color-primary-50) 0%, var(--background) 100%);
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-accent-500) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }

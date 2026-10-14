@@ -1,26 +1,53 @@
 import Link from "next/link";
-import { Container } from "@/components/ui/container";
-import { buttonStyles } from "@/components/ui/button-styles";
+import {
+  ArrowIcon,
+  Container,
+  Section,
+  SectionHeading,
+  SerifAccent,
+} from "@/components/ui";
+
+const helpfulLinks = [
+  { label: "Home", href: "/" },
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
+];
 
 export default function NotFound() {
   return (
-    <main id="main-content" className="flex flex-1 flex-col items-center justify-center py-20">
-      <Container className="text-center">
-        <p className="text-sm font-semibold uppercase tracking-widest text-primary-600">
-          404
-        </p>
-        <h1 className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-          Page Not Found
-        </h1>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Sorry, we couldn&apos;t find the page you&apos;re looking for.
-        </p>
-        <div className="mt-8">
-          <Link href="/" className={buttonStyles()}>
-            Back to Home
-          </Link>
-        </div>
-      </Container>
+    <main id="main-content" className="flex flex-1 flex-col">
+      <Section tone="dark" className="flex flex-1 items-center">
+        <Container className="flex flex-col gap-12">
+          <SectionHeading
+            level={1}
+            tone="dark"
+            eyebrow="Page not found"
+            title={
+              <>
+                This page{" "}
+                <SerifAccent className="text-gold-300">isn&apos;t here.</SerifAccent>
+              </>
+            }
+            description="The link may be out of date or mistyped. These pages are a good place to start."
+          />
+          <nav aria-label="Helpful links">
+            <ul className="grid gap-px overflow-hidden rounded-2xl bg-paper/10 ring-1 ring-paper/10 sm:grid-cols-2">
+              {helpfulLinks.map((link) => (
+                <li key={link.href} className="bg-forest-900">
+                  <Link
+                    href={link.href}
+                    className="group flex items-center justify-between gap-6 px-6 py-6 text-lg font-medium text-paper transition-colors duration-200 hover:bg-forest-800 md:px-8"
+                  >
+                    {link.label}
+                    <ArrowIcon className="text-gold-300" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </Container>
+      </Section>
     </main>
   );
 }

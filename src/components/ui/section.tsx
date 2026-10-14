@@ -1,29 +1,50 @@
+import type { ComponentPropsWithoutRef } from "react";
 import { cn } from "@/lib/utils";
-import { Container } from "./container";
 
-interface SectionProps extends React.HTMLAttributes<HTMLElement> {
-  variant?: "default" | "muted" | "brand" | "gradient";
+export type SectionTone = "paper" | "surface" | "dark";
+
+export interface SectionProps extends ComponentPropsWithoutRef<"section"> {
+  tone?: SectionTone;
 }
 
-const variantStyles: Record<NonNullable<SectionProps["variant"]>, string> = {
-  default: "bg-background",
-  muted: "bg-muted",
-  brand: "gradient-brand text-white",
-  gradient: "gradient-subtle",
+const toneClasses: Record<SectionTone, string> = {
+  paper: "bg-paper text-ink",
+  surface: "bg-surface text-ink",
+  dark: "isolate overflow-hidden bg-forest-950 text-paper texture-glow",
 };
 
 export function Section({
-  variant = "default",
+  tone = "paper",
   className,
   children,
   ...props
 }: SectionProps) {
   return (
     <section
-      className={cn("py-20 lg:py-28", variantStyles[variant], className)}
+      className={cn(
+        "relative py-24 md:py-36",
+        toneClasses[tone],
+        className,
+      )}
       {...props}
     >
-      <Container>{children}</Container>
+      {tone === "dark" ? <DarkField /> : null}
+      {children}
     </section>
+  );
+}
+
+function DarkField() {
+  return (
+    <>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 texture-circuit texture-fade"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 texture-grain"
+      />
+    </>
   );
 }
