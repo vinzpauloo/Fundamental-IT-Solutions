@@ -5,6 +5,9 @@ import { cn } from "@/lib/utils";
 
 export type LogoTone = "light" | "dark";
 
+const markSourceWidth = 488;
+const markSourceHeight = 550;
+
 export interface LogoProps {
   tone?: LogoTone;
   showWordmark?: boolean;
@@ -23,16 +26,16 @@ export function Logo({
   className,
 }: LogoProps) {
   const isDark = tone === "dark";
+  const markWidth = Math.round((height * markSourceWidth) / markSourceHeight);
 
   const content = (
     <>
       <Image
         src="/brand/fit-mark.png"
         alt={site.name}
-        width={488}
-        height={550}
+        width={markWidth}
+        height={height}
         className="shrink-0"
-        style={{ height, width: "auto" }}
       />
       {showWordmark ? (
         <span
