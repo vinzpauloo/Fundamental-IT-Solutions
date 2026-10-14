@@ -40,7 +40,10 @@ export default function ContactPage() {
       <Section>
         <Container className="grid gap-16 lg:grid-cols-12 lg:gap-x-12">
           <div className="lg:col-span-7">
-            <EnquiryForm needOptions={needOptions} />
+            <EnquiryForm
+              needOptions={needOptions}
+              turnstileSiteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+            />
           </div>
           <aside
             aria-label="Contact details"

@@ -9,9 +9,11 @@ import {
 import { ChevronDown } from "lucide-react";
 import { submitContactEnquiry } from "@/app/contact/actions";
 import { SubmitButton } from "@/components/contact/submit-button";
+import { TurnstileWidget } from "@/components/contact/turnstile-widget";
 import {
   idleContactState,
   type ContactState,
+  type NotSentReason,
 } from "@/components/contact/state";
 import {
   budgetOptions,
@@ -42,11 +44,13 @@ type FieldProps = {
   children: (control: FieldControl) => ReactNode;
 };
 
-const announcements: Record<ContactState["kind"], string> = {
+const announcements: Record<
+  Exclude<ContactState["kind"], "not-sent">,
+  string
+> = {
   idle: "",
   invalid: "Check the highlighted fields. Nothing was sent.",
   sent: "Thanks. We have your message.",
-  "not-sent": "Your message was not sent. Email us instead and nothing is lost.",
 };
 
 const controlClasses =
@@ -60,8 +64,10 @@ function stampOnMount(input: HTMLInputElement | null) {
 
 export function EnquiryForm({
   needOptions,
+  turnstileSiteKey,
 }: {
   needOptions: readonly string[];
+  turnstileSiteKey?: string;
 }) {
   const [state, formAction] = useActionState(
     submitContactEnquiry,
@@ -73,6 +79,12 @@ export function EnquiryForm({
     state.kind === "invalid" || state.kind === "not-sent"
       ? state.values
       : emptyEnquiryValues;
+  const responseKey =
+    state.kind === "idle" ? "idle" : String(state.submittedAt);
+  const announcement =
+    state.kind === "not-sent"
+      ? notSentHeadlines[state.reason]
+      : announcements[state.kind];
   const fieldErrors: FieldErrors =
     state.kind === "invalid" ? state.fieldErrors : {};
   const firstInvalidField = enquiryFields.find(
@@ -92,7 +104,7 @@ export function EnquiryForm({
   return (
     <div className="rounded-3xl bg-surface p-6 shadow-soft ring-1 ring-line sm:p-10">
       <p role="status" aria-live="polite" className="sr-only">
-        {announcements[state.kind]}
+        {announcement}
       </p>
 
       {state.kind === "sent" ? (
@@ -179,6 +191,7 @@ export function EnquiryForm({
               {(control) => (
                 <Select
                   {...control}
+                  key={responseKey}
                   ref={focusIfFirstInvalid("need")}
                   name="need"
                   required
@@ -202,6 +215,7 @@ export function EnquiryForm({
               {(control) => (
                 <Select
                   {...control}
+                  key={responseKey}
                   ref={focusIfFirstInvalid("budget")}
                   name="budget"
                   defaultValue={values.budget}
@@ -236,6 +250,15 @@ export function EnquiryForm({
               )}
             </Field>
 
+            {turnstileSiteKey ? (
+              <div className="sm:col-span-2">
+                <TurnstileWidget
+                  key={responseKey}
+                  siteKey={turnstileSiteKey}
+                />
+              </div>
+            ) : null}
+
             <div className="sm:col-span-2">
               <SubmitButton />
             </div>
@@ -243,6 +266,7 @@ export function EnquiryForm({
 
           {state.kind === "not-sent" ? (
             <NotSentNotice
+              reason={state.reason}
               mailtoHref={state.mailtoHref}
               focusRef={focusNewResult}
             />
@@ -318,10 +342,20 @@ function Confirmation({ focusRef }: { focusRef: FocusCallback }) {
   );
 }
 
+const notSentHeadlines: Record<NotSentReason, string> = {
+  unconfigured: "Your message was not sent. Email us instead and nothing is lost.",
+  failed: "Your message was not sent. Email us instead and nothing is lost.",
+  rejected: "Your message was not sent. Email us instead and nothing is lost.",
+  unverified:
+    "We could not confirm the form was sent by a person, so nothing was sent. Try again in a moment, or email us instead.",
+};
+
 function NotSentNotice({
+  reason,
   mailtoHref,
   focusRef,
 }: {
+  reason: NotSentReason;
   mailtoHref: string;
   focusRef: FocusCallback;
 }) {
@@ -331,9 +365,7 @@ function NotSentNotice({
       tabIndex={-1}
       className="mt-8 rounded-2xl border border-gold-500/50 bg-gold-100 p-5 sm:p-6"
     >
-      <p className="font-medium text-ink">
-        Your message was not sent. Email us instead and nothing is lost.
-      </p>
+      <p className="font-medium text-ink">{notSentHeadlines[reason]}</p>
       <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
         <ButtonLink href={mailtoHref} variant="primary">
           Email us instead
