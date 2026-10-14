@@ -47,7 +47,7 @@ export function Logo({
           style={{ fontSize: height * 0.55 }}
         >
           Fundamental{" "}
-          <span className={isDark ? "text-gold-300" : "text-gold-600"}>IT</span>
+          <span className={isDark ? "text-gold-300" : "text-gold-700"}>IT</span>
           {wordmark === "full" ? " Solutions" : null}
         </span>
       ) : null}

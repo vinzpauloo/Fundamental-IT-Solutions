@@ -18,6 +18,7 @@
   --color-forest-200: #B9E3C3;
   --color-forest-100: #E3F4E7;
 
+  --color-gold-700: #8A6914;
   --color-gold-600: #A8811F;
   --color-gold-500: #C99A2E;
   --color-gold-400: #DDB54E;
@@ -85,6 +86,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
   }
 
   body {
