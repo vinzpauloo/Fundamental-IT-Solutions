@@ -17,7 +17,7 @@ export function ContactDetails() {
         <Eyebrow>Email</Eyebrow>
         <a
           href={`mailto:${site.email}`}
-          className="block text-xl font-medium text-ink underline decoration-gold-500 decoration-2 underline-offset-8 transition-colors hover:decoration-forest-600 md:text-2xl"
+          className="block text-xl font-medium text-ink underline decoration-gold-500 decoration-2 underline-offset-8 transition-colors hover:decoration-forest-600 xl:text-2xl"
         >
           {emailLocalPart}@
           <wbr />

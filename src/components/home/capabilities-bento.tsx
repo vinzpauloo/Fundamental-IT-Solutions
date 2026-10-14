@@ -41,26 +41,28 @@ function WebPlatformsShowcase() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none relative hidden min-h-80 flex-1 md:block"
+      className="pointer-events-none hidden flex-1 items-center md:flex"
     >
-      {studies.map((study, index) => (
-        <BrowserFrame
-          key={study.slug}
-          address={siteHost(study.url)}
-          className={cn(
-            "absolute w-[68%] ring-paper/10",
-            showcaseFramePlacement[index],
-          )}
-        >
-          <Image
-            src={study.images.desktop.src}
-            alt=""
-            fill
-            sizes="(min-width: 1240px) 490px, 45vw"
-            className="object-cover object-top"
-          />
-        </BrowserFrame>
-      ))}
+      <div className="relative aspect-[16/10] w-full">
+        {studies.map((study, index) => (
+          <BrowserFrame
+            key={study.slug}
+            address={siteHost(study.url)}
+            className={cn(
+              "absolute w-[68%] ring-paper/10",
+              showcaseFramePlacement[index],
+            )}
+          >
+            <Image
+              src={study.images.desktop.src}
+              alt=""
+              fill
+              sizes="(min-width: 1240px) 490px, 45vw"
+              className="object-cover object-top"
+            />
+          </BrowserFrame>
+        ))}
+      </div>
     </div>
   );
 }
